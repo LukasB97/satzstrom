@@ -1,0 +1,55 @@
+{
+  "name": "@satzstrom/primitives",
+  "version": "0.1.1",
+  "description": "React primitives for paginated Satzstrom documents",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.tsx --format esm --dts --clean --tsconfig tsconfig.json",
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "katex": "^0.16.22",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0"
+  },
+  "peerDependencies": {
+    "react": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/katex": "^0.16.7",
+    "@types/react": "^19.1.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LukasB97/satzstrom.git",
+    "directory": "packages/primitives"
+  },
+  "homepage": "https://github.com/LukasB97/satzstrom#readme",
+  "bugs": {
+    "url": "https://github.com/LukasB97/satzstrom/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

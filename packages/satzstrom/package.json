@@ -1,0 +1,34 @@
+{
+  "name": "satzstrom",
+  "version": "0.1.1",
+  "description": "Install and launch the Satzstrom PDF renderer for your platform",
+  "license": "MIT",
+  "bin": {
+    "satzstrom": "bin/satzstrom.cjs"
+  },
+  "files": [
+    "bin/satzstrom.cjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "optionalDependencies": {
+    "@satzstrom/win32-x64": "0.1.1",
+    "@satzstrom/linux-x64": "0.1.1"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LukasB97/satzstrom.git",
+    "directory": "packages/satzstrom"
+  },
+  "homepage": "https://github.com/LukasB97/satzstrom#readme",
+  "bugs": {
+    "url": "https://github.com/LukasB97/satzstrom/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.1",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "23302dd90b8bb74b44d365fafef8df20f809b61cb347023951ecf60a88a29651"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "dffe460c934830513c5396cc90d629b71d828273ec44d180524b9995fdd7c995"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "e7e610305a9703505c63ae8420437b2aa0f887cfa562781e629116f77abaaea3"
+    },
+    {
+      "path": ".prettierrc.json",
+      "sha256": "b17108bcb72f69e0f37b6e5a9f3043acae5ae392348a554c5445ade19d21570f"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "07dc004d96ec94db0e437e43848995b20e2a6f1e6d014749e4f175621891e101"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "sha256": "ea026f5acfa45658b83834671590af4afd63c2c87ddbbc3ff9dfe46333ed9bb5"
+    },
+    {
+      "path": "COMMUNITY-LICENSE.md",
+      "sha256": "96c06b640a0566ecb458569d94450e424219baf2f3381fba36bf5f0b03035213"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "e3dc9971b9d6a8bb8356bdb0aba691151f37dddf4496dc656e0ae422c534b1d6"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "58b2cc2109e16c40c9c31f7fccbdaba4b1367287540dcedf8005962087a8b700"
+    },
+    {
+      "path": "README.md",
+      "sha256": "b7185f2928ddba4033f8c426c498fe716586b24ccc2c5a5e0ecead3288246ffd"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "d554a8bf9a7d2453e6d0478490fef83a892e6d52f3f5efa753d56ce9a2d0121f"
+    },
+    {
+      "path": "SUPPORT.md",
+      "sha256": "a75610f4b9a919a099335bd0f590a8239dc4bfdd501d118bf6d997326a044442"
+    },
+    {
+      "path": "docs/assets/readme/aurelis-material-notes.webp",
+      "sha256": "3ef4299bb93398f95fe4e54caef67e57f5bb556a8e02ea465d6496cfa2cbc2bb"
+    },
+    {
+      "path": "docs/assets/readme/hero.webp",
+      "sha256": "50bedbd819239c24e5edaaa7d6c4d1611929ea55a9c3f367e236cb6148ef827e"
+    },
+    {
+      "path": "docs/assets/readme/mathematics.webp",
+      "sha256": "d82000812583243493c315d4af3fc38cb1f75befa8219252b4dd8a1fb52c75fd"
+    },
+    {
+      "path": "docs/assets/readme/proposal.webp",
+      "sha256": "089fc8a35b0871ae9afb51a5b09f21be19bdc8e944eeaf26ac94c466040e883d"
+    },
+    {
+      "path": "docs/assets/readme/specimen-book.webp",
+      "sha256": "13977d7054835060fd16d38443b7a8071697122819b02f11a6b5c3669e62c74b"
+    },
+    {
+      "path": "examples/starter/document.tsx",
+      "sha256": "5744d8817d9c2dbbfb2cffc342d99cd77137dbeb8a6637a77a2d1fa04c7fb4ef"
+    },
+    {
+      "path": "examples/starter/package.json",
+      "sha256": "9aad817728af57bdf26cc9bbb0d9ab71bf982bd39133d2bda6190d65295f4ade"
+    },
+    {
+      "path": "examples/starter/styles.css",
+      "sha256": "62d9529a3dc1d32cf7b892f5252ce29da99c6c73f1f21be1f02f8a44c2a6b4be"
+    },
+    {
+      "path": "package.json",
+      "sha256": "481f492017c516777947ffce0c3fde5e026fe1e892328120377401c041d24781"
+    },
+    {
+      "path": "packages/primitives/LICENSE",
+      "sha256": "58b2cc2109e16c40c9c31f7fccbdaba4b1367287540dcedf8005962087a8b700"
+    },
+    {
+      "path": "packages/primitives/README.md",
+      "sha256": "7a8afe1db671b33f31e646dce1c9409de6093c07fa174fdb48c7e1d8a2ab29ec"
+    },
+    {
+      "path": "packages/primitives/package.json",
+      "sha256": "0a19b3cdaa1731f4f2271bdd20653e4ff280d347f640fb5839a084be623d4db8"
+    },
+    {
+      "path": "packages/primitives/src/content.tsx",
+      "sha256": "478694aa0959f189ef94dfc12fd0cd4cb01f733395e7e639999758cf3e94c0a6"
+    },
+    {
+      "path": "packages/primitives/src/document-context.ts",
+      "sha256": "6924ecbca4ef39185676576e4e6263c25d42a43d19b1ec4870f9ec84ba751d36"
+    },
+    {
+      "path": "packages/primitives/src/index.tsx",
+      "sha256": "40cafdf4a3890cdec1e67742610287a2021256e8806949b1b55d70f890244bd9"
+    },
+    {
+      "path": "packages/primitives/src/layout-store.ts",
+      "sha256": "4f0bd15ff1c84217aff22dd263d0f156f7df71e8baf696a1f9e278756db8bcf2"
+    },
+    {
+      "path": "packages/primitives/src/markdown.tsx",
+      "sha256": "7e7c1ca08cb410eebd0fb3de641b741a4c25892ec1bd2a6a2a6b01efe177c884"
+    },
+    {
+      "path": "packages/primitives/src/pages.tsx",
+      "sha256": "5b50df80b029ecff775f6422ada72c98e928ba93b5f25f18efff09e437f84cb0"
+    },
+    {
+      "path": "packages/primitives/src/repeat-box.tsx",
+      "sha256": "c429ade8213a68d141af7f52510bf5438ecf47e4f28421935f0676c66444917f"
+    },
+    {
+      "path": "packages/primitives/src/sequences.tsx",
+      "sha256": "f8c69fc2cd99f82f98cbcdfa2ae68061d447ee5083856236b5ee013b24447109"
+    },
+    {
+      "path": "packages/primitives/src/types.ts",
+      "sha256": "7e2569cb45c69a95e3253efc4f2a065bdcbe99cd88220f8aae1c79eeb565f4b5"
+    },
+    {
+      "path": "packages/primitives/test/markdown.test.mjs",
+      "sha256": "7a68957487fef2f5ce71469ebbb2e34d40b66d66834356de07fa942353de08fe"
+    },
+    {
+      "path": "packages/primitives/tsconfig.json",
+      "sha256": "13b9c533cb76b0bcec8594e96e52c8c4671135b7253878e2985166c7c385db2d"
+    },
+    {
+      "path": "packages/satzstrom/LICENSE",
+      "sha256": "58b2cc2109e16c40c9c31f7fccbdaba4b1367287540dcedf8005962087a8b700"
+    },
+    {
+      "path": "packages/satzstrom/README.md",
+      "sha256": "9f9e342a5736bf65898ad6c1afd5d288970db05bc9f74fc2e216a88dba90093b"
+    },
+    {
+      "path": "packages/satzstrom/bin/satzstrom.cjs",
+      "sha256": "1f9465e1efb92afbb99bac99aa7637b22d246f48a1a58f6352167714993699f8"
+    },
+    {
+      "path": "packages/satzstrom/package.json",
+      "sha256": "8b564c27e5075a0b8023723da684ea631b6367ed90e9e7ab5571a7072760ecb5"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "sha256": "59f4209c2fdd2266462f10b610c7e2b76967ac4ef9a3911d1c45bbd97b879f87"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "sha256": "857f77cec4b8f296f387797aaa23dce3ef0fddc5dc48ec0a17030a7c919d4b47"
+    },
+    {
+      "path": "skills/satzstrom/SKILL.md",
+      "sha256": "59841da18d8f4f0537d25cdc753c4ad70271c33e2c629c557cb83dd1d04a6fee"
+    }
+  ]
+}

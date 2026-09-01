@@ -1,0 +1,4 @@
+packages:
+  # The launcher has no source-build dependencies. Its four optional native packages do not exist in
+  # the public registry until release, so source CI deliberately installs only the primitives workspace.
+  - packages/primitives

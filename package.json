@@ -1,0 +1,15 @@
+{
+  "name": "satzstrom-public-source",
+  "private": true,
+  "version": "0.1.1",
+  "type": "module",
+  "packageManager": "pnpm@10.33.4",
+  "scripts": {
+    "build": "pnpm --filter @satzstrom/primitives build",
+    "test": "pnpm build && pnpm --filter @satzstrom/primitives test"
+  },
+  "devDependencies": {
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  }
+}
