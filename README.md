@@ -46,32 +46,31 @@ Without an explicit output path, Satzstrom writes `document.pdf` beside the sour
 Satzstrom does not introduce a separate document language. A document is a normal React component built with JSX, semantic HTML, CSS, and the dependencies selected by its project.
 
 ```tsx
-import { Document, Flow, Page, PageMaster } from "@satzstrom/primitives";
+import { Document, Flow, PageMaster } from "@satzstrom/primitives";
 
-function ReportPage() {
-  return <Flow style={{ height: "100%", padding: "18mm" }} />;
+function PageLayout() {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
+      <header>Header</header>
+      <Flow style={{ flex: 1 }} />
+      <footer>Footer</footer>
+    </div>
+  );
 }
 
-export default function AnnualReport() {
+export default function Report() {
   return (
-    <Document title="Annual report" lang="en">
-      <Page size="A4" style={{ padding: "18mm" }}>
-        <h1>Annual report</h1>
-        <p>2026</p>
-      </Page>
-
-      <PageMaster size="A4" layout={ReportPage}>
-        <article>
-          <h1>Business review</h1>
-          <p>This content flows through as many pages as it needs.</p>
-        </article>
+    <Document title="Report" lang="en">
+      <PageMaster size="A4" layout={PageLayout}>
+        <h1>Report</h1>
+        <p>Content that flows across pages.</p>
       </PageMaster>
     </Document>
   );
 }
 ```
 
-`Page` creates one deliberately composed physical page. `PageMaster` lets content flow through a reusable React page frame. Its optional layout places exactly one `Flow` alongside recurring headers, footers, sidebars, decorations, and page numbers.
+`PageMaster` lets content flow through a reusable React page frame. Its optional layout places exactly one empty `Flow` alongside recurring headers, footers, sidebars, decorations, and page numbers. The layout above fills the page, then uses Flexbox to give `Flow` the remaining height. Without a layout, the whole page is the flow area.
 
 Satzstrom bundles stylesheets imported by the document or its components. The filename and project structure are up to you. Hooks, component libraries, fonts, PostCSS, browser-compatible packages, and project-specific design systems remain normal parts of the React project.
 

@@ -71,7 +71,32 @@ Every direct child of `Document` is either a `Page` or a `PageMaster`.
 
 Use `Page` for a single, deliberately composed physical page such as a cover, divider, poster, or full-page visual. Its children may also be a function receiving the current page number and total page count.
 
-Use `PageMaster` when content should flow across pages. Without a `layout`, the whole page is the flow area. A custom `layout` is a normal React component receiving `page` and `pages`; render exactly one `Flow` where the content belongs. Its CSS box may sit anywhere inside ordinary React composition, with headers, footers, sidebars, and decorations around it.
+Use `PageMaster` when content should flow across pages. Without a `layout`, the whole page is the flow area. A custom `layout` is a normal React component receiving `page` and `pages`; render exactly one empty `Flow` where the content belongs. Give that `Flow` a visible CSS box. In a simple vertical frame, a full-height Flexbox column with `flex: 1` on `Flow` gives it the space between the recurring header and footer.
+
+```tsx
+import { Document, Flow, PageMaster } from "@satzstrom/primitives";
+
+function PageLayout() {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
+      <header>Header</header>
+      <Flow style={{ flex: 1 }} />
+      <footer>Footer</footer>
+    </div>
+  );
+}
+
+export default function Report() {
+  return (
+    <Document title="Report" lang="en">
+      <PageMaster size="A4" layout={PageLayout}>
+        <h1>Report</h1>
+        <p>Content that flows across pages.</p>
+      </PageMaster>
+    </Document>
+  );
+}
+```
 
 Multiple pages and page masters may follow one another in the same document. Each can use a named paper size, a custom width and height in millimeters, portrait or landscape orientation, bleed, and crop marks. Page numbers remain global across the document.
 

@@ -40,7 +40,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "b7185f2928ddba4033f8c426c498fe716586b24ccc2c5a5e0ecead3288246ffd"
+      "sha256": "563e2e6e75b06b4383bad0c3a789152e65f10c6ae42b825a4ebae2ca1b6362b6"
     },
     {
       "path": "SECURITY.md",
@@ -168,7 +168,7 @@
     },
     {
       "path": "skills/satzstrom/SKILL.md",
-      "sha256": "59841da18d8f4f0537d25cdc753c4ad70271c33e2c629c557cb83dd1d04a6fee"
+      "sha256": "84d6b76e97e59e77269a9439b22a766c321162b7cff2a4f1cc4bcaea75ed2ba8"
     }
   ]
 }
