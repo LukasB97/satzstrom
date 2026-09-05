@@ -1,0 +1,49 @@
+{
+  "title": "Asterion Flight Atlas",
+  "mission": "HELIOS / 27",
+  "generatedAt": "18. Juli 2087 · 23:41 UTC",
+  "crew": ["Mara Venn", "Ilya Okafor", "Noor al-Khatib", "Ren Ishikawa"],
+  "telemetry": [
+    { "label": "Transferzeit", "value": "418 d", "delta": "−12,4 %" },
+    { "label": "Δv-Budget", "value": "9,72 km/s", "delta": "+0,18" },
+    { "label": "Signalgüte", "value": "99,997 %", "delta": "+34 ppm" },
+    { "label": "Massenreserve", "value": "18,6 t", "delta": "+2,1 t" }
+  ],
+  "trajectory": [
+    {
+      "phase": "Luna escape",
+      "epoch": "T+00:00",
+      "radius": "0,0026 AU",
+      "velocity": "10,84 km/s",
+      "risk": "NOMINAL"
+    },
+    {
+      "phase": "Venus assist",
+      "epoch": "T+71 d",
+      "radius": "0,723 AU",
+      "velocity": "35,02 km/s",
+      "risk": "WATCH"
+    },
+    {
+      "phase": "Solar periapsis",
+      "epoch": "T+148 d",
+      "radius": "0,311 AU",
+      "velocity": "63,91 km/s",
+      "risk": "CRITICAL"
+    },
+    {
+      "phase": "Jupiter gate",
+      "epoch": "T+289 d",
+      "radius": "5,204 AU",
+      "velocity": "18,44 km/s",
+      "risk": "NOMINAL"
+    },
+    {
+      "phase": "Asterion injection",
+      "epoch": "T+418 d",
+      "radius": "8,116 AU",
+      "velocity": "7,38 km/s",
+      "risk": "NOMINAL"
+    }
+  ]
+}

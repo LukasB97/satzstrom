@@ -1,0 +1,63 @@
+{
+  "studio": "Aurelis Studio",
+  "issue": "Field Notes 03",
+  "title": "Tactile Futures",
+  "subtitle": "A quiet technology of matter",
+  "published": "Autumn 2026",
+  "location": "Copenhagen / Rotterdam",
+  "materials": [
+    {
+      "code": "M-01",
+      "name": "Mycelium veil",
+      "family": "Grown composite",
+      "score": 92,
+      "signal": "Soft / porous",
+      "composition": "68% mycelium · 24% hemp · 8% mineral",
+      "palette": "mycelium"
+    },
+    {
+      "code": "M-02",
+      "name": "Algae glass",
+      "family": "Bio polymer",
+      "score": 87,
+      "signal": "Clear / elastic",
+      "composition": "51% algae · 31% cellulose · 18% binder",
+      "palette": "algae"
+    },
+    {
+      "code": "M-03",
+      "name": "Copper skin",
+      "family": "Recovered metal",
+      "score": 81,
+      "signal": "Warm / conductive",
+      "composition": "94% recovered copper · 6% tin",
+      "palette": "copper"
+    },
+    {
+      "code": "M-04",
+      "name": "Carbon lace",
+      "family": "Woven structure",
+      "score": 89,
+      "signal": "Dry / resilient",
+      "composition": "72% recycled carbon · 28% flax",
+      "palette": "carbon"
+    }
+  ],
+  "principles": [
+    {
+      "number": "01",
+      "title": "Grow the form",
+      "text": "Let structure emerge from the behaviour of the material."
+    },
+    {
+      "number": "02",
+      "title": "Keep the trace",
+      "text": "Make origin, repair and transformation visible."
+    },
+    {
+      "number": "03",
+      "title": "Design the afterlife",
+      "text": "Treat disassembly as part of the first sketch."
+    }
+  ]
+}

@@ -74,7 +74,7 @@ export default function Report() {
 
 Satzstrom bundles stylesheets imported by the document or its components. The filename and project structure are up to you. Hooks, component libraries, fonts, PostCSS, browser-compatible packages, and project-specific design systems remain normal parts of the React project.
 
-Documents may be parameterless or data-driven. To receive external props, export a named Zod object schema and pass the data explicitly through `--args` or `--data`.
+Documents may be parameterless or data-driven. Define ordinary TypeScript props on the default component and pass an object explicitly through `--args` or `--data`. Satzstrom passes those fields directly as component props; named exports have no special runtime meaning.
 
 Existing Markdown content can be rendered as semantic HTML through the optional `Markdown` primitive. JSX remains the surrounding document model.
 
@@ -216,11 +216,11 @@ Satzstrom currently produces sRGB output. CMYK separation, spot colors, and PDF/
 
 These are rendered documents, not design mockups. See more output on the [examples page](https://satzstrom.com/examples).
 
-The public repository also contains a small [starter project](./examples/starter).
+The public repository contains the complete sources for all six gallery documents, a shared page frame, and a small [starter project](./examples/starter). Follow the [example guide](./examples/README.md) to run the invoice end to end or open any other gallery project.
 
 ## Public preview
 
-Satzstrom 0.1.1 is a public preview. Breaking changes may occur during the `0.x` series and are documented in the [changelog](./CHANGELOG.md) with migration notes.
+Satzstrom 0.1.2 is a public preview. Breaking changes may occur during the `0.x` series and are documented in the [changelog](./CHANGELOG.md) with migration notes.
 
 Supported platforms are:
 
@@ -253,7 +253,7 @@ This repository contains the public parts of Satzstrom Community Edition:
 - The cross-platform CLI launcher
 - Documentation
 - The Satzstrom skill
-- A starter example
+- Six complete gallery examples and a starter example
 - Public tests and CI
 
 These files are licensed under the [MIT License](./LICENSE).
@@ -274,6 +274,6 @@ Read [CONTRIBUTING.md](./CONTRIBUTING.md) before beginning substantial work.
 
 ## Support and security
 
-Satzstrom 0.1.1 has community support without an SLA. See [SUPPORT.md](./SUPPORT.md) when reporting a problem.
+Satzstrom 0.1.2 has community support without an SLA. See [SUPPORT.md](./SUPPORT.md) when reporting a problem.
 
 Please report vulnerabilities privately through GitHub Private Vulnerability Reporting. See [SECURITY.md](./SECURITY.md) for details.

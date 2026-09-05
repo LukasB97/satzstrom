@@ -1,0 +1,176 @@
+:root {
+  color-scheme: light;
+  --paper: #fafaf7;
+  --ink: #111;
+  --text: 10.5pt;
+  --leading: 1.55;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.math-pages,
+.math-page {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.math-page {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 22mm minmax(0, 1fr) 22mm;
+  grid-template-rows: 22mm minmax(0, 1fr) 25mm;
+  font-family: KaTeX_Main, Georgia, "Times New Roman", serif;
+  font-size: var(--text);
+  line-height: var(--leading);
+}
+
+.math-page__content {
+  grid-column: 2;
+  grid-row: 2;
+  min-width: 0;
+  min-height: 0;
+}
+
+h1 {
+  margin: 0 0 4.7mm;
+  font-family: inherit;
+  font-size: 15pt;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.16;
+  break-after: avoid-page;
+}
+
+h2 {
+  margin: 4.8mm 0 2.7mm;
+  font-family: inherit;
+  font-size: 11pt;
+  font-weight: 700;
+  line-height: 1.2;
+  break-after: avoid-page;
+}
+
+h2.flow-heading {
+  break-after: auto;
+}
+
+p {
+  margin: 0 0 2.5mm;
+  text-align: justify;
+  text-justify: inter-word;
+  orphans: 3;
+  widows: 3;
+}
+
+ol {
+  margin: 0 0 2.8mm;
+  padding-left: 7mm;
+}
+
+li {
+  margin: 0 0 1.2mm;
+  padding-left: 1mm;
+  text-align: justify;
+}
+
+.opening {
+  margin-bottom: 4mm;
+}
+
+.statement,
+.proof {
+  display: flow-root;
+}
+
+.statement {
+  margin: 0 0 3.6mm;
+  font-style: italic;
+}
+
+.proof {
+  margin: 0 0 3.9mm;
+}
+
+.statement__heading,
+.proof__heading {
+  white-space: nowrap;
+}
+
+.statement__heading {
+  font-style: normal;
+}
+
+.statement__sequence-anchor {
+  display: none;
+}
+
+.statement__body > :last-child,
+.proof__body > :last-child {
+  margin-bottom: 0;
+}
+
+.proof__heading {
+  font-style: italic;
+}
+
+.proof__qed {
+  float: right;
+  margin-left: 1em;
+  font-style: normal;
+}
+
+.rr-math-display {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 2.6mm 0;
+  font-size: 1em;
+  text-align: center;
+}
+
+.rr-math-display .katex-display {
+  width: auto;
+  margin: 0;
+}
+
+.rr-math-display .katex-display > .katex {
+  text-align: initial;
+}
+
+.equation-row {
+  position: relative;
+}
+
+.equation-row .rr-math-display {
+  padding-inline: 12mm;
+}
+
+.equation-number {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 9pt;
+  font-style: normal;
+}
+
+.equation-row--compact .rr-math-display {
+  font-size: 0.92em;
+}
+
+.rr-math-inline,
+.math-compound {
+  white-space: nowrap;
+}
+
+.math-page__folio {
+  grid-column: 2;
+  grid-row: 3;
+  align-self: center;
+  justify-self: center;
+  color: #555;
+  font-size: 8pt;
+}

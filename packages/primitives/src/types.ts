@@ -8,7 +8,7 @@ export type PageSettings = {
 };
 
 export type DocumentMetadata = {
-  title: string;
+  title?: string;
   author?: string;
   subject?: string;
   keywords?: string[];

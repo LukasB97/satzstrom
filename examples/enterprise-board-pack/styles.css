@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@source "./";
+
+@theme {
+  --color-navy: #0b1730;
+  --color-blue: #175cd3;
+  --color-cyan: #06aed4;
+  --color-mist: #f1f5f9;
+  --color-line: #d7deea;
+  --color-slatecopy: #52627a;
+}
+.rr-page {
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 72%, #f1f5f9 100%);
+}
+.rr-page:not(.enterprise-cover-page)::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  right: 0;
+  top: 0;
+  width: 2.2mm;
+  height: 34mm;
+  background: linear-gradient(#175cd3, #06aed4);
+}
+.rr-page.enterprise-cover-page {
+  background: radial-gradient(circle at 78% 34%, #17345b 0%, #0b1730 37%, #071126 100%);
+}
+.enterprise-cover-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 14mm 14mm;
+}
+.rr-page.enterprise-roadmap-page {
+  background: #f8fafc;
+}
+.rr-page.enterprise-landscape-page .rr-page-header,
+.rr-page.enterprise-roadmap-page .rr-page-header {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.enterprise-document [data-rr-typeset-line] {
+  text-rendering: geometricPrecision;
+}
+.enterprise-document article,
+.enterprise-document aside {
+  break-inside: avoid;
+}
+.risk-matrix {
+  background-image:
+    linear-gradient(#e2e8f0 1px, transparent 1px),
+    linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
+  background-size: 20% 20%;
+}
+.spark-bars span:nth-child(3n + 1) {
+  background: #175cd3;
+}
+.spark-bars span:nth-child(3n + 2) {
+  background: #06aed4;
+}
+.spark-bars span:nth-child(3n) {
+  background: #8b5cf6;
+}

@@ -39,20 +39,17 @@ The public primitives are `Document`, `Page`, `PageMaster`, `Flow`, `PageBreak`,
 
 `document.tsx` must export one React component as its default export. That component renders exactly one `Document` as its root. Hooks and ordinary React composition work normally.
 
-`Document` owns the metadata written into the PDF. Give it an accurate `title` and `lang`, then add `author`, `subject`, `keywords`, and `dir` when the document needs them.
+`Document` owns the metadata written into the PDF. Metadata is optional and omitted when absent. Add an accurate `title`, `author`, `subject`, and `keywords` when the document needs them. PDF/UA-1 requires a usable `title`. `lang` defaults to `de`; set it and `dir` accurately for the document.
 
-A document without external arguments needs only its default component. For external arguments, export a named Zod object `schema`. Satzstrom validates an explicit inline object or JSON file and passes its fields directly as component props.
+A document without external arguments needs only its default component. For external arguments, define ordinary TypeScript props on that component. Satzstrom passes an explicit inline JSON object or JSON file directly as component props. Named exports have no special runtime meaning.
 
 ```tsx
-import { z } from "zod";
 import { Document, Page } from "@satzstrom/primitives";
 
-export const schema = z.object({
-  title: z.string(),
-  total: z.number(),
-});
-
-type Data = z.infer<typeof schema>;
+type Data = {
+  title: string;
+  total: number;
+};
 
 export default function Report({ title, total }: Data) {
   return (
@@ -63,7 +60,7 @@ export default function Report({ title, total }: Data) {
 }
 ```
 
-The schema must validate an object. Supply arguments explicitly with CLI `--args <json>` or `--data <dataPath>`, or with the equivalent MCP fields `args` or `dataPath`. Omit both for a parameterless document.
+Supply an object explicitly with CLI `--args <json>` or `--data <dataPath>`, or with the equivalent MCP fields `args` or `dataPath`. Omit both for a parameterless document. The JSON root must be an object. Validate domain data inside the document project when runtime validation is useful.
 
 ## Fixed and Flowing Pages
 
@@ -71,7 +68,7 @@ Every direct child of `Document` is either a `Page` or a `PageMaster`.
 
 Use `Page` for a single, deliberately composed physical page such as a cover, divider, poster, or full-page visual. Its children may also be a function receiving the current page number and total page count.
 
-Use `PageMaster` when content should flow across pages. Without a `layout`, the whole page is the flow area. A custom `layout` is a normal React component receiving `page` and `pages`; render exactly one empty `Flow` where the content belongs. Give that `Flow` a visible CSS box. In a simple vertical frame, a full-height Flexbox column with `flex: 1` on `Flow` gives it the space between the recurring header and footer.
+Use `PageMaster` when content should flow across pages. Without a `layout`, the whole page is the flow area. A custom `layout` is a normal React component receiving `page` and `pages`; render exactly one empty `Flow` where the content belongs. Give that `Flow` a visible CSS box. In a simple vertical frame, a full-height Flexbox column with `flex: 1` on `Flow` gives it the space between the recurring header and footer. Within the rendered layout, Flow is also the accessibility boundary: the highest branches outside it receive `aria-hidden="true"` automatically. Set `aria-hidden="false"` on an intentional accessible sibling branch. Explicit `aria-hidden="true"` always wins.
 
 ```tsx
 import { Document, Flow, PageMaster } from "@satzstrom/primitives";
@@ -179,7 +176,7 @@ Use the live preview while shaping the document. It shows the same paginated pag
 
 After a structural or visual change, inspect the document state and render the pages affected by that change. Check the first and last page of a flowing region as well as pages around a deliberate break. Use debug rendering when a content boundary, split, keep rule, or overflow is unclear.
 
-With MCP, use `check` for issues and `inspect` for page images or text. Without MCP, use:
+With MCP, use `check` for issues and `inspect` for page images or text. Pass absolute document and data paths, especially when the client exposes multiple workspace roots. Without MCP, use:
 
 ```sh
 satzstrom check path/to/document.tsx
@@ -196,7 +193,7 @@ Render the stable document with an explicit output path when the surrounding wor
 satzstrom render path/to/document.tsx --out annual-report.pdf --strict
 ```
 
-Use `--pdfa 2a` for PDF/A-2a and `--pdfua 1` for PDF/UA-1. Both may be enabled together. PDF/UA relies on semantic HTML, an accurate document language, useful alternative text, and accessible names for links and graphics. Mark purely decorative repeated headers and footers with `aria-hidden="true"`.
+Use `--pdfa 2a` for PDF/A-2a and `--pdfua 1` for PDF/UA-1. Both may be enabled together. PDF/UA requires a usable document title and relies on semantic HTML, an accurate document language, useful alternative text, and accessible names for links and graphics. PageMaster layout branches outside Flow are hidden from accessibility output automatically.
 
 Set `bleed` and `cropMarks` on `Page` or `PageMaster` when the document will be trimmed after printing. Satzstrom writes the physical page, trim, and bleed geometry into the PDF.
 

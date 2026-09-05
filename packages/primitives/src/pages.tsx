@@ -35,7 +35,7 @@ const pageSizes: Record<PageSizeName, [number, number]> = {
 
 function pageAttributes(settings: PageSettings = {}) {
   if (settings.bleed !== undefined && (!Number.isFinite(settings.bleed) || settings.bleed < 0)) {
-    throw new Error("bleed muss eine positive Millimeterangabe oder 0 sein.");
+    throw new Error("bleed must be a positive millimeter value or 0.");
   }
   const size = settings.size ?? "A4";
   let [width, height] = typeof size === "string" ? pageSizes[size] : [size.width, size.height];
@@ -67,7 +67,7 @@ export type FlowProps = Omit<
 
 export function Flow(props: FlowProps) {
   if (!useContext(PageMasterLayoutContext)) {
-    throw new Error("Flow darf nur innerhalb des Layouts eines PageMasters verwendet werden.");
+    throw new Error("Flow can only be used inside a PageMaster layout.");
   }
   return <div {...props} data-rr-master-flow="" />;
 }
@@ -94,9 +94,9 @@ export function Document({
           data-rr-document-label={resolvedLabels.document}
           data-rr-footnotes-label={resolvedLabels.footnotes}
           data-rr-title={title}
-          data-rr-author={author ?? ""}
-          data-rr-subject={subject ?? ""}
-          data-rr-keywords={JSON.stringify(keywords ?? [])}
+          data-rr-author={author}
+          data-rr-subject={subject}
+          data-rr-keywords={keywords ? JSON.stringify(keywords) : undefined}
           data-rr-bookmarks={bookmarks?.name ?? ""}
           lang={lang}
           dir={dir}

@@ -1,0 +1,30 @@
+{
+  "issue": "EDITION 01 / 2026",
+  "published": "22 JULY 2026",
+  "journal": {
+    "author": "Dr. Noor al-Khatib",
+    "institution": "Institute for Geometric Analysis"
+  },
+  "cities": [
+    { "name": "Arden", "heat": 18, "canopy": 34, "population": "1.2m" },
+    { "name": "Brest", "heat": 23, "canopy": 29, "population": "840k" },
+    { "name": "Calder", "heat": 28, "canopy": 24, "population": "2.1m" },
+    { "name": "Dover", "heat": 33, "canopy": 19, "population": "960k" },
+    { "name": "Easton", "heat": 39, "canopy": 14, "population": "1.7m" },
+    { "name": "Faro", "heat": 26, "canopy": 27, "population": "610k" }
+  ],
+  "quarters": [
+    { "label": "Q2 25", "actual": 14.8, "plan": 14.4 },
+    { "label": "Q3 25", "actual": 16.1, "plan": 15.8 },
+    { "label": "Q4 25", "actual": 17.7, "plan": 17.2 },
+    { "label": "Q1 26", "actual": 19.0, "plan": 18.8 },
+    { "label": "Q2 26", "actual": 20.6, "plan": 20.2 },
+    { "label": "Q3 26", "actual": 22.4, "plan": 21.6 }
+  ],
+  "portfolio": [
+    { "name": "Enterprise", "revenue": "€14.8m", "growth": "+38%", "margin": "81%" },
+    { "name": "Mid-market", "revenue": "€5.9m", "growth": "+24%", "margin": "76%" },
+    { "name": "Public sector", "revenue": "€1.7m", "growth": "+17%", "margin": "70%" },
+    { "name": "Total", "revenue": "€22.4m", "growth": "+31%", "margin": "78%" }
+  ]
+}

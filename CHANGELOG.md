@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.2 - 2026-09-04
+
+- Improve preview navigation, reload reliability, diagnostics, and explicit document inputs.
+- Publish complete example sources and PDFs with a consistent English-first website.
+- Align CLI, MCP, and author-facing errors and validation across the public workflow.
+
 ## 0.1.1 - 2026-09-01
 
 - Add explicit `Flow` regions for predictable reusable page layouts.

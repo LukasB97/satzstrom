@@ -1,0 +1,176 @@
+{
+  "company": "Northstar Systems",
+  "period": "FY26 · Q3",
+  "meetingDate": "24. Juli 2026",
+  "classification": "BOARD CONFIDENTIAL",
+  "kpis": [
+    {
+      "label": "Annual recurring revenue",
+      "value": "€84,2m",
+      "change": "+31 %",
+      "note": "vs. €64,3m prior year"
+    },
+    {
+      "label": "Net revenue retention",
+      "value": "119 %",
+      "change": "+4 pp",
+      "note": "enterprise cohort"
+    },
+    { "label": "Gross margin", "value": "78,4 %", "change": "+2,3 pp", "note": "cloud efficiency" },
+    { "label": "Adjusted EBITDA", "value": "€8,7m", "change": "+€6,1m", "note": "10,3 % margin" }
+  ],
+  "quarters": [
+    { "label": "Q2 25", "revenue": 14.8, "plan": 14.4 },
+    { "label": "Q3 25", "revenue": 16.1, "plan": 15.8 },
+    { "label": "Q4 25", "revenue": 17.7, "plan": 17.2 },
+    { "label": "Q1 26", "revenue": 19.0, "plan": 18.8 },
+    { "label": "Q2 26", "revenue": 20.6, "plan": 20.2 },
+    { "label": "Q3 26", "revenue": 22.4, "plan": 21.6 }
+  ],
+  "segments": [
+    { "name": "Enterprise", "arr": "€52,8m", "growth": "+38 %", "margin": "81 %", "share": 63 },
+    { "name": "Mid-market", "arr": "€23,7m", "growth": "+24 %", "margin": "76 %", "share": 28 },
+    { "name": "Public sector", "arr": "€7,7m", "growth": "+17 %", "margin": "70 %", "share": 9 }
+  ],
+  "pipeline": [
+    { "stage": "Qualified", "value": "€46,8m", "count": 184, "coverage": "4,2×", "width": 100 },
+    { "stage": "Solution fit", "value": "€31,2m", "count": 93, "coverage": "2,8×", "width": 82 },
+    { "stage": "Commercial", "value": "€19,6m", "count": 41, "coverage": "1,8×", "width": 64 },
+    { "stage": "Commit", "value": "€12,7m", "count": 19, "coverage": "1,1×", "width": 46 }
+  ],
+  "risks": [
+    {
+      "id": "R-01",
+      "title": "DACH renewal concentration",
+      "owner": "CRO",
+      "impact": 4,
+      "likelihood": 3,
+      "trend": "up",
+      "mitigation": "Executive sponsor coverage for top 12 renewals"
+    },
+    {
+      "id": "R-02",
+      "title": "Inference cost volatility",
+      "owner": "CTO",
+      "impact": 3,
+      "likelihood": 4,
+      "trend": "flat",
+      "mitigation": "Reserved capacity and model routing rollout"
+    },
+    {
+      "id": "R-03",
+      "title": "SOC 2 evidence backlog",
+      "owner": "CISO",
+      "impact": 4,
+      "likelihood": 2,
+      "trend": "down",
+      "mitigation": "Dedicated control owners through August"
+    },
+    {
+      "id": "R-04",
+      "title": "US enterprise hiring",
+      "owner": "CPO",
+      "impact": 3,
+      "likelihood": 3,
+      "trend": "down",
+      "mitigation": "Two retained searches activated"
+    },
+    {
+      "id": "R-05",
+      "title": "Partner channel quality",
+      "owner": "COO",
+      "impact": 2,
+      "likelihood": 3,
+      "trend": "flat",
+      "mitigation": "Tiering and certification gate in Q4"
+    },
+    {
+      "id": "R-06",
+      "title": "Data residency launch",
+      "owner": "CPO",
+      "impact": 5,
+      "likelihood": 2,
+      "trend": "flat",
+      "mitigation": "External readiness review on 8 August"
+    }
+  ],
+  "programs": [
+    {
+      "name": "Atlas platform",
+      "workstream": "Product",
+      "owner": "N. Chen",
+      "start": 1,
+      "end": 4,
+      "status": "on-track",
+      "outcome": "Unified policy engine"
+    },
+    {
+      "name": "Sovereign cloud",
+      "workstream": "Product",
+      "owner": "L. Becker",
+      "start": 2,
+      "end": 6,
+      "status": "watch",
+      "outcome": "EU data residency"
+    },
+    {
+      "name": "North America scale",
+      "workstream": "GTM",
+      "owner": "M. Ellis",
+      "start": 1,
+      "end": 5,
+      "status": "on-track",
+      "outcome": "€18m regional ARR"
+    },
+    {
+      "name": "Partner 2.0",
+      "workstream": "GTM",
+      "owner": "S. Rossi",
+      "start": 3,
+      "end": 7,
+      "status": "watch",
+      "outcome": "30 certified partners"
+    },
+    {
+      "name": "Margin flywheel",
+      "workstream": "Operations",
+      "owner": "A. Singh",
+      "start": 1,
+      "end": 3,
+      "status": "complete",
+      "outcome": "80% gross margin"
+    },
+    {
+      "name": "Control fabric",
+      "workstream": "Operations",
+      "owner": "J. Weber",
+      "start": 2,
+      "end": 6,
+      "status": "on-track",
+      "outcome": "Continuous compliance"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D-17",
+      "title": "Approve sovereign cloud capacity",
+      "ask": "€4,2m committed infrastructure envelope",
+      "recommendation": "APPROVE",
+      "rationale": "Protects the Q1 launch window and secures 34% lower unit cost."
+    },
+    {
+      "id": "D-18",
+      "title": "Advance US hiring plan",
+      "ask": "Move 12 enterprise roles from Q1 into Q4",
+      "recommendation": "APPROVE",
+      "rationale": "Pipeline coverage supports earlier capacity with a six-month payback."
+    },
+    {
+      "id": "D-19",
+      "title": "Retire legacy analytics tier",
+      "ask": "End-of-sale on 30 September",
+      "recommendation": "APPROVE WITH GUARDRAIL",
+      "rationale": "Migration team retains exceptions for the seven regulated customers."
+    }
+  ]
+}

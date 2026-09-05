@@ -1,6 +1,6 @@
 {
   "name": "@satzstrom/primitives",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React primitives for paginated Satzstrom documents",
   "license": "MIT",
   "type": "module",

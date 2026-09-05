@@ -1,0 +1,14 @@
+{
+  "number": "RB-2026-0718",
+  "date": "18.07.2026",
+  "customer": {
+    "name": "Nordlicht Anlagenbau GmbH",
+    "street": "Hafenstraße 18",
+    "city": "20457 Hamburg"
+  },
+  "items": [
+    { "description": "Dokumentendesign und Template", "quantity": 1, "price": 2400 },
+    { "description": "Datenanbindung", "quantity": 3, "price": 680 },
+    { "description": "PDF-Abnahmetests", "quantity": 2, "price": 420 }
+  ]
+}

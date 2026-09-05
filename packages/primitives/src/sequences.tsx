@@ -22,7 +22,7 @@ export function defineSequence<const TitleRequired extends boolean = false>(conf
   titleRequired?: TitleRequired;
 }): SequenceDefinition<TitleRequired> {
   if (!/^[A-Za-z][A-Za-z0-9_-]*$/.test(config.name)) {
-    throw new Error(`Ungültiger Sequence-Name: ${config.name}`);
+    throw new Error(`Invalid Sequence name: ${config.name}`);
   }
   return Object.freeze({
     name: config.name,

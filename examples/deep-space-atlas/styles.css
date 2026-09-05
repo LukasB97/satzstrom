@@ -1,0 +1,578 @@
+@import "tailwindcss";
+@source "./";
+
+:root {
+  --ink: #111827;
+  --muted: #607089;
+  --line: #cbd5e1;
+  --cyan: #0891b2;
+  --orange: #ea580c;
+  --night: #07101f;
+}
+.atlas {
+  color: var(--ink);
+  font-family: Inter, "Segoe UI", sans-serif;
+}
+.atlas .rr-page-header,
+.atlas .rr-page-footer {
+  color: #6b778c;
+  font-size: 7pt;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.rr-page.atlas-cover-page {
+  background: radial-gradient(circle at 62% 38%, #172a46 0, #0b172b 31%, var(--night) 67%);
+}
+.atlas-cover {
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0;
+  padding: 15mm 17mm 12mm;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #f8fafc;
+}
+.atlas-cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  background-image: radial-gradient(circle, #fff 0 0.35mm, transparent 0.45mm);
+  background-size: 19mm 23mm;
+}
+.cover-top,
+.cover-bottom {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  color: #8ea0ba;
+  font-size: 6.8pt;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+.orbit-mark {
+  position: absolute;
+  z-index: 1;
+  width: 160mm;
+  height: 160mm;
+  right: 0;
+  top: 37mm;
+  color: #7dd3fc;
+}
+.cover-title {
+  position: relative;
+  z-index: 2;
+  width: 146mm;
+  margin-bottom: 16mm;
+}
+.cover-title > div {
+  margin-bottom: 5mm;
+  color: #67e8f9;
+  font-size: 8pt;
+  font-weight: 750;
+  letter-spacing: 0.22em;
+}
+.cover-title h1 {
+  margin: 0;
+  max-width: 130mm;
+  font-size: 46pt;
+  font-weight: 750;
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+}
+.cover-title p {
+  max-width: 105mm;
+  margin: 7mm 0 0;
+  color: #b9c5d7;
+  font-family: Georgia, serif;
+  font-size: 12pt;
+  line-height: 1.45;
+}
+.eyebrow {
+  color: var(--cyan);
+  font-size: 7pt;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+.index-title {
+  margin: 3mm 0 10mm;
+  font-family: Georgia, serif;
+  font-size: 34pt;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+.atlas-index-page .rr-contents {
+  margin-bottom: 11mm;
+}
+.atlas-contents .rr-contents-list,
+.atlas-contents .rr-contents-children {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.atlas-contents .rr-contents-list > li {
+  border-top: 0.3mm solid var(--line);
+}
+.atlas-contents a {
+  display: grid;
+  grid-template-columns: 13mm 1fr 12mm;
+  gap: 2mm;
+  padding: 3.2mm 0;
+  color: inherit;
+  text-decoration: none;
+}
+.atlas-contents .rr-contents-number {
+  color: var(--cyan);
+  font-weight: 800;
+}
+.atlas-contents .rr-contents-title {
+  font-family: Georgia, serif;
+  font-size: 11pt;
+}
+.atlas-contents .rr-contents-page {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.dispatch {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 4mm;
+  border: 0.3mm solid var(--ink);
+}
+.dispatch div {
+  padding: 3mm;
+  border-right: 0.3mm solid var(--ink);
+}
+.dispatch div:last-child {
+  border-right: 0;
+}
+.dispatch span,
+.crew-strip span,
+.signature-grid span {
+  display: block;
+  margin-bottom: 1.5mm;
+  color: var(--muted);
+  font-size: 6.5pt;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+.dispatch strong {
+  font-size: 9pt;
+}
+.crew-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3mm;
+  margin-top: 5mm;
+}
+.crew-strip div {
+  padding-top: 2mm;
+  border-top: 0.7mm solid var(--cyan);
+  font-size: 8.5pt;
+}
+.manifesto {
+  margin: 11mm 0 0;
+  padding-left: 8mm;
+  border-left: 1mm solid var(--orange);
+  font-family: Georgia, serif;
+  font-size: 17pt;
+  line-height: 1.35;
+}
+.manifesto cite {
+  display: block;
+  margin-top: 3mm;
+  color: var(--muted);
+  font-family: Inter, "Segoe UI", sans-serif;
+  font-size: 7pt;
+  font-style: normal;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.atlas-heading {
+  display: flex;
+  gap: 4mm;
+  align-items: baseline;
+  margin: 0 0 7mm;
+  color: var(--ink);
+  font-family: Georgia, serif;
+  font-weight: 500;
+  line-height: 1.05;
+}
+.atlas-heading span {
+  color: var(--orange);
+  font-family: Inter, "Segoe UI", sans-serif;
+  font-size: 0.38em;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+}
+.atlas-heading-1 {
+  font-size: 28pt;
+}
+.atlas-heading-2 {
+  margin-top: 8mm;
+  margin-bottom: 4mm;
+  font-size: 18pt;
+}
+.atlas-paragraph {
+  margin: 0 0 4mm;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 10.4pt;
+  line-height: 1.42;
+  text-align: justify;
+  hyphens: auto;
+  orphans: 3;
+  widows: 3;
+}
+.atlas-paragraph + .atlas-paragraph {
+  text-indent: 5mm;
+}
+.atlas-lead {
+  color: #344258;
+  font-size: 13pt;
+  line-height: 1.42;
+  text-align: left;
+}
+.telemetry-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3mm;
+  margin: 6mm 0 9mm;
+}
+.telemetry-grid article {
+  padding: 3mm 3mm 4mm;
+  border-top: 0.8mm solid var(--cyan);
+  background: #f1f5f9;
+}
+.telemetry-grid span {
+  display: block;
+  min-height: 8mm;
+  color: var(--muted);
+  font-size: 6.5pt;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.telemetry-grid strong {
+  display: block;
+  font-size: 15pt;
+  letter-spacing: -0.03em;
+}
+.telemetry-grid em {
+  display: block;
+  margin-top: 1mm;
+  color: #0f766e;
+  font-size: 7pt;
+  font-style: normal;
+  font-weight: 750;
+}
+.atlas-figure {
+  margin: 5mm 0 6mm;
+}
+.atlas-figure svg {
+  display: block;
+  width: 100%;
+  max-height: 78mm;
+}
+.atlas-figure figcaption {
+  display: grid;
+  grid-template-columns: 17mm 1fr;
+  gap: 2mm;
+  margin-top: 2mm;
+  padding-top: 2mm;
+  border-top: 0.3mm solid var(--line);
+  color: var(--muted);
+  font-size: 7.5pt;
+  line-height: 1.35;
+}
+.atlas-figure figcaption b {
+  color: var(--orange);
+  letter-spacing: 0.08em;
+}
+.transfer-plot {
+  height: 60mm;
+  background: linear-gradient(120deg, #f8fafc, #eef6f8);
+}
+.protocol {
+  margin: 5mm 0;
+  padding: 4mm 5mm;
+  border: 0.3mm solid #94a3b8;
+  border-left: 1.2mm solid var(--orange);
+  background: #f8fafc;
+}
+.protocol-index {
+  color: var(--orange);
+  font-size: 6.5pt;
+  font-weight: 850;
+  letter-spacing: 0.15em;
+}
+.protocol h3 {
+  margin: 1.5mm 0 3mm;
+  font-family: Georgia, serif;
+  font-size: 14pt;
+}
+.protocol p,
+.protocol li {
+  font-family: Georgia, serif;
+  font-size: 9.5pt;
+  line-height: 1.4;
+}
+.protocol ol {
+  margin: 2mm 0 0;
+  padding-left: 6mm;
+}
+.rr-page.foldout-page {
+  color: #e5edf8;
+  background: var(--night);
+}
+.foldout-page .rr-page-header,
+.foldout-page .rr-page-footer {
+  color: #72839d;
+}
+.foldout-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 4mm;
+}
+.foldout-heading span {
+  color: #67e8f9;
+  font-size: 7pt;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+.foldout-heading h1 {
+  margin: 1mm 0 0;
+  font-size: 25pt;
+  letter-spacing: -0.035em;
+}
+.foldout-heading p {
+  width: 80mm;
+  margin: 0;
+  color: #8fa0ba;
+  font-family: Georgia, serif;
+  font-size: 9pt;
+  line-height: 1.4;
+  text-align: right;
+}
+.atlas-figure-wide {
+  margin: 0 0 5mm;
+}
+.atlas-figure-wide figcaption {
+  border-color: #263650;
+  color: #8fa0ba;
+}
+.constellation {
+  height: 80mm;
+  background: radial-gradient(circle at 60% 42%, #13233d, #07101f 68%);
+}
+.foldout-grid {
+  display: grid;
+  grid-template-columns: 1fr 80mm;
+  gap: 7mm;
+  align-items: start;
+}
+.trajectory-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #cbd5e1;
+  font-size: 8pt;
+}
+.trajectory-table th {
+  padding: 2mm;
+  border-bottom: 0.5mm solid #44536a;
+  color: #71839e;
+  font-size: 6.5pt;
+  letter-spacing: 0.1em;
+  text-align: left;
+  text-transform: uppercase;
+}
+.trajectory-table td {
+  padding: 2.4mm 2mm;
+  border-bottom: 0.25mm solid #263650;
+  font-variant-numeric: tabular-nums;
+}
+.risk {
+  padding: 0.8mm 1.5mm;
+  border: 0.25mm solid #475569;
+  border-radius: 99px;
+  font-size: 6pt;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+.risk-watch {
+  color: #fde68a;
+  border-color: #a16207;
+}
+.risk-critical {
+  color: #fdba74;
+  border-color: #c2410c;
+}
+.vector-card {
+  min-height: 68mm;
+  padding: 4mm;
+  border: 0.3mm solid #34445d;
+  background: #0b1628;
+}
+.vector-card .rr-math-display {
+  margin: 2mm 0;
+  color: #dbeafe;
+  font-size: 9pt;
+}
+.vector-card p {
+  margin: 3mm 0 1mm;
+  color: #71839e;
+  font-size: 7pt;
+}
+.vector-card strong {
+  color: #67e8f9;
+  font-size: 14pt;
+}
+.event-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4mm;
+  margin-top: 7mm;
+  padding-top: 4mm;
+  border-top: 0.3mm solid #34445d;
+}
+.event-strip article {
+  padding-left: 3mm;
+  border-left: 0.7mm solid #263650;
+}
+.event-strip article:first-child {
+  border-color: #22d3ee;
+}
+.event-strip article:last-child {
+  border-color: #fb923c;
+}
+.event-strip span,
+.event-strip b,
+.event-strip strong,
+.event-strip em {
+  display: block;
+}
+.event-strip span {
+  color: #71839e;
+  font-size: 6pt;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+.event-strip b {
+  margin-top: 1.5mm;
+  color: #cbd5e1;
+  font-size: 7pt;
+  letter-spacing: 0.09em;
+}
+.event-strip strong {
+  margin-top: 1mm;
+  color: #f8fafc;
+  font-size: 15pt;
+}
+.event-strip em {
+  margin-top: 1mm;
+  color: #71839e;
+  font-size: 6.5pt;
+  font-style: normal;
+}
+.signal-wave {
+  background: linear-gradient(180deg, #ecfeff, #fff);
+}
+.language-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3mm;
+  margin: 5mm 0 8mm;
+}
+.language-grid article {
+  min-height: 35mm;
+  padding: 3.5mm;
+  border: 0.3mm solid var(--line);
+}
+.language-grid span {
+  color: var(--cyan);
+  font-size: 6.5pt;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+.language-grid p {
+  margin: 3mm 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 10pt;
+  line-height: 1.5;
+}
+.final-rule {
+  margin: 4mm 0 8mm;
+  padding: 7mm;
+  color: #ecfeff;
+  background: linear-gradient(120deg, #083344, #0e7490);
+}
+.final-rule span {
+  display: block;
+  font-size: 7pt;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+.final-rule strong {
+  display: block;
+  margin: 2mm 0;
+  font-size: 34pt;
+  letter-spacing: 0.06em;
+}
+.final-rule p {
+  margin: 0;
+  font-family: Georgia, serif;
+}
+.signature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5mm;
+  margin: 12mm 0;
+}
+.signature-grid div {
+  min-height: 18mm;
+  padding-top: 3mm;
+  border-top: 0.3mm solid var(--ink);
+}
+.signature-grid b {
+  font-family: Georgia, serif;
+  font-size: 10pt;
+}
+.closing-mark {
+  position: relative;
+  height: 80mm;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 8mm;
+  color: #e2e8f0;
+  background: var(--night);
+}
+.closing-mark .orbit-mark {
+  width: 82mm;
+  height: 82mm;
+  left: 0;
+  top: -1mm;
+}
+.closing-mark div {
+  position: relative;
+  z-index: 2;
+  width: 82mm;
+}
+.closing-mark span {
+  color: #67e8f9;
+  font-size: 7pt;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+.closing-mark strong {
+  display: block;
+  margin-top: 3mm;
+  font-size: 17pt;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+}

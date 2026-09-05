@@ -1,0 +1,70 @@
+@import "tailwindcss";
+@source "./";
+
+@theme {
+  --color-ink: #191b18;
+  --color-paper: #f3efe4;
+  --color-clay: #ec5b3f;
+  --color-moss: #245b4c;
+  --color-lime: #d9ff57;
+  --color-fog: #d9d5c9;
+}
+
+.aurelis {
+  color: #191b18;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.aurelis [data-rr-typeset-line] {
+  text-rendering: geometricPrecision;
+}
+
+.rr-page.aurelis-cover-page {
+  background: #f3efe4;
+}
+
+.rr-page.aurelis-cover-page::before {
+  background-image: radial-gradient(rgba(25, 27, 24, 0.12) 0.35px, transparent 0.45px);
+  background-size: 2.2mm 2.2mm;
+  content: "";
+  inset: 0;
+  opacity: 0.4;
+  pointer-events: none;
+  position: absolute;
+}
+
+.rr-page.aurelis-essay-page {
+  background: linear-gradient(112deg, #f7f3e9 0%, #f7f3e9 71%, #e8e4d9 71%, #e8e4d9 100%);
+}
+
+.rr-page.aurelis-atlas-page {
+  background: #191b18;
+}
+
+.aurelis-serif {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.aurelis-cover-word {
+  letter-spacing: -0.075em;
+}
+
+.aurelis-orbit {
+  filter: drop-shadow(0 8mm 14mm rgba(67, 31, 25, 0.12));
+}
+
+.aurelis-card {
+  break-inside: avoid;
+}
+
+.aurelis-hairline {
+  background-image: linear-gradient(90deg, currentColor 45%, transparent 45%);
+  background-size: 3mm 1px;
+}
+
+.aurelis-atlas-grid {
+  background-image:
+    linear-gradient(rgba(243, 239, 228, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(243, 239, 228, 0.07) 1px, transparent 1px);
+  background-size: 10mm 10mm;
+}

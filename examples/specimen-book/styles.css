@@ -1,0 +1,1605 @@
+@import "tailwindcss";
+@source "./";
+
+@theme {
+  --color-ten-orange: #ff4b00;
+  --color-ten-blue: #2026ff;
+  --color-ten-lime: #d5ff35;
+}
+
+.specimen-document {
+  color: #17181b;
+  font-family: Inter, Aptos, "Segoe UI", sans-serif;
+}
+.specimen-document * {
+  box-sizing: border-box;
+}
+.specimen-document article,
+.specimen-document aside {
+  break-inside: avoid;
+}
+
+/* 01 / COVER */
+.rr-page.ten-cover-page {
+  background: #f4efe3;
+}
+.ten-cover {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  padding: 15mm;
+  background: #f4efe3;
+}
+.ten-cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(17, 17, 17, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 17, 17, 0.08) 1px, transparent 1px);
+  background-size: 15mm 15mm;
+}
+.ten-cover header,
+.ten-cover footer {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.6mm solid #111;
+  padding-top: 2.5mm;
+  font-size: 6pt;
+  letter-spacing: 0.15em;
+}
+.ten-cover header b {
+  font-size: 7pt;
+}
+.ten-cover > svg {
+  position: absolute;
+  top: 18mm;
+  right: 0;
+  width: 138mm;
+  height: 205mm;
+}
+.ten-cover main {
+  position: absolute;
+  z-index: 2;
+  top: 61mm;
+  left: 15mm;
+  width: 105mm;
+}
+.ten-cover main > span {
+  display: block;
+  font-size: 6pt;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+.ten-cover h1 {
+  margin: 5mm 0 0;
+  font-size: 88pt;
+  line-height: 0.72;
+  font-weight: 900;
+  letter-spacing: -0.09em;
+}
+.ten-cover main p {
+  width: 68mm;
+  margin-top: 10mm;
+  font-family: Georgia, serif;
+  font-size: 13pt;
+  line-height: 1.3;
+}
+.ten-cover aside {
+  position: absolute;
+  z-index: 3;
+  right: 10mm;
+  bottom: 27mm;
+  display: grid;
+  grid-template-columns: repeat(3, 31mm);
+  background: #111;
+  color: white;
+}
+.ten-cover aside div {
+  min-height: 18mm;
+  border-right: 0.2mm solid rgba(255, 255, 255, 0.25);
+  border-bottom: 0.2mm solid rgba(255, 255, 255, 0.25);
+  padding: 3mm;
+}
+.ten-cover aside b {
+  color: #d5ff35;
+  font-size: 6pt;
+}
+.ten-cover aside span {
+  display: block;
+  margin-top: 2mm;
+  font-size: 5pt;
+  letter-spacing: 0.08em;
+}
+.ten-cover footer {
+  position: absolute;
+  right: 15mm;
+  bottom: 12mm;
+  left: 15mm;
+  align-items: end;
+}
+
+/* 02 / MATHEMATICS */
+.rr-page.math-page {
+  background: #fff;
+}
+.scholarly-frame {
+  display: grid;
+  grid-template-rows: 12mm minmax(0, 1fr) auto 12mm;
+  height: 100%;
+  padding: 8mm 16mm;
+}
+.scholarly-frame > header,
+.scholarly-frame > footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.25mm solid #202124;
+  font-family: Arial, sans-serif;
+  font-size: 5.2pt;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+.scholarly-frame > footer {
+  border-bottom: 0;
+}
+.scholarly-frame > main {
+  min-height: 0;
+  padding: 7mm 0 3mm;
+}
+.math-paper {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #111;
+}
+.math-title {
+  border-bottom: 0.3mm solid #111;
+  padding-bottom: 4mm;
+  text-align: center;
+}
+.math-title h1 {
+  margin: 0 0 2mm;
+  font-size: 24pt;
+  line-height: 1.05;
+  font-weight: 400;
+}
+.math-title > div {
+  font-size: 6.3pt;
+  line-height: 1.4;
+}
+.math-title > div b {
+  margin-right: 2mm;
+  font-size: 7pt;
+}
+.math-title > div span + span::before {
+  content: " · ";
+  margin: 0 1mm;
+}
+.math-abstract {
+  margin: 4mm 10mm 1.5mm;
+  font-size: 7.2pt;
+  line-height: 1.45;
+  text-align: justify;
+}
+.math-abstract b {
+  font-variant: small-caps;
+}
+.math-keywords {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10mm 4mm;
+  font-size: 5.8pt;
+}
+.math-columns {
+  column-count: 2;
+  column-gap: 7mm;
+  column-fill: balance;
+  border-top: 0.25mm solid #cfd2df;
+  padding-top: 4mm;
+}
+.math-columns > section {
+  break-inside: auto;
+}
+.math-columns h2 {
+  margin: 4mm 0 1.5mm;
+  font-size: 9pt;
+  font-weight: 600;
+}
+.math-columns h2:first-child {
+  margin-top: 0;
+}
+.math-columns h3 {
+  margin: 3mm 0 1.5mm;
+  font-size: 7.5pt;
+  font-weight: 600;
+}
+.math-columns p {
+  margin: 0 0 2.5mm;
+  font-size: 7.15pt;
+  line-height: 1.48;
+  text-align: justify;
+}
+.math-columns .rr-math-display {
+  margin: 2.5mm 0;
+  font-size: 7.5pt;
+}
+.theorem {
+  margin: 3mm 0;
+  padding-left: 3mm;
+}
+.theorem p {
+  margin: 0;
+  font-style: italic;
+}
+.theorem p b {
+  font-style: normal;
+}
+.math-figure {
+  margin: 0 0 4mm;
+  break-inside: avoid;
+}
+.math-figure svg {
+  display: block;
+  width: 100%;
+  height: 42mm;
+}
+.math-figure figcaption {
+  display: grid;
+  grid-template-columns: 11mm 1fr;
+  border-top: 0.2mm solid #111;
+  padding-top: 1mm;
+  font-size: 5.3pt;
+}
+.math-figure figcaption b {
+  font-variant: small-caps;
+}
+.proof {
+  margin: 0;
+}
+.proof-end {
+  float: right;
+}
+.corollary {
+  padding-left: 3mm;
+  font-style: italic;
+}
+.corollary b {
+  font-style: normal;
+}
+.math-note {
+  border-top: 0.25mm solid #111;
+  padding-top: 2mm;
+  font-size: 5.5pt;
+  font-style: italic;
+  line-height: 1.4;
+}
+.math-references {
+  margin: 0;
+  padding-left: 5mm;
+  font-size: 5.8pt;
+  line-height: 1.45;
+}
+.math-references li {
+  margin-bottom: 1mm;
+}
+.page-footnote {
+  display: grid;
+  grid-template-columns: 5mm 1fr;
+  gap: 1mm;
+}
+.page-footnote > span {
+  font-weight: 650;
+  text-align: right;
+}
+.page-footnote > p {
+  margin: 0;
+}
+.page-footnote-call {
+  font-size: 0.7em;
+  line-height: 0;
+  vertical-align: super;
+}
+.math-page .page-footnote {
+  margin-top: 2mm;
+  border-top: 0.25mm solid #2637c9;
+  padding-top: 1.5mm;
+  font-family: Arial, sans-serif;
+  font-size: 5.7pt;
+}
+
+/* 03 / LAW */
+.rr-page.law-page {
+  background: #f6f0e4;
+}
+.legal-frame {
+  display: grid;
+  grid-template-rows: 12mm minmax(0, 1fr) auto 12mm;
+  height: 100%;
+  padding: 8mm 18mm;
+  color: #241d18;
+}
+.legal-frame > header,
+.legal-frame > footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.35mm solid #5e1521;
+  font-family: "Times New Roman", serif;
+  font-size: 6pt;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+.legal-frame > footer {
+  border-bottom: 0;
+}
+.legal-frame > main {
+  min-height: 0;
+  padding: 5mm 0 2mm;
+}
+.legal-opinion {
+  font-family: "Times New Roman", Georgia, serif;
+}
+.legal-title {
+  text-align: center;
+}
+.legal-title > b {
+  display: block;
+  margin-top: 0;
+  font-size: 7pt;
+  letter-spacing: 0.16em;
+}
+.legal-title h1 {
+  margin: 3mm 0 1mm;
+  font-size: 22pt;
+  line-height: 1;
+  font-weight: 500;
+  font-variant: small-caps;
+}
+.legal-title p {
+  margin: 0;
+  font-size: 6.5pt;
+}
+.legal-rule {
+  display: grid;
+  grid-template-columns: 18mm 1fr;
+  margin: 4mm 0;
+  border: 0.45mm solid #5e1521;
+  padding: 3mm;
+  font-size: 7.5pt;
+  line-height: 1.42;
+}
+.legal-rule b {
+  color: #8c2533;
+  font-family: Arial, sans-serif;
+  font-size: 6pt;
+  letter-spacing: 0.12em;
+}
+.legal-rule p {
+  margin: 0;
+}
+.legal-grid {
+  display: grid;
+  grid-template-columns: 37mm 1fr;
+  gap: 7mm;
+}
+.legal-grid > aside {
+  border-right: 0.3mm solid #ba9c82;
+  padding-right: 4mm;
+  font-size: 6.2pt;
+  line-height: 1.45;
+}
+.legal-grid > aside b,
+.legal-grid > aside span {
+  display: block;
+}
+.legal-grid > aside ol {
+  margin: 6mm 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: item;
+}
+.legal-grid > aside li {
+  border-top: 0.2mm solid #ba9c82;
+  padding: 2mm 0;
+}
+.legal-grid > aside li::before {
+  counter-increment: item;
+  content: counter(item, upper-roman) ". ";
+  color: #8c2533;
+  font-weight: 700;
+}
+.legal-cite {
+  margin-top: 8mm;
+  color: #8c2533;
+  font-size: 8pt;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+.legal-grid > section {
+  font-size: 8.7pt;
+  line-height: 1.68;
+}
+.legal-grid h2 {
+  margin: 4mm 0 1.5mm;
+  text-align: center;
+  font-size: 10pt;
+}
+.legal-grid p {
+  margin: 0 0 3.5mm;
+  text-align: justify;
+}
+.legal-lead::first-letter {
+  float: left;
+  margin: 0 1.5mm 0 0;
+  color: #8c2533;
+  font-size: 30pt;
+  line-height: 0.75;
+}
+.legal-grid blockquote {
+  margin: 6mm 0;
+  border-top: 0.5mm double #5e1521;
+  border-bottom: 0.5mm double #5e1521;
+  padding: 3mm 5mm;
+}
+.legal-grid blockquote b {
+  display: block;
+  color: #8c2533;
+  font-family: Arial, sans-serif;
+  font-size: 5pt;
+  letter-spacing: 0.14em;
+}
+.legal-grid blockquote p {
+  margin: 1mm 0 0;
+  font-size: 10pt;
+  font-style: italic;
+  text-align: left;
+}
+.legal-close {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-top: 5mm;
+  border-top: 0.25mm solid #ba9c82;
+  padding-top: 2mm;
+}
+.legal-close span {
+  font-style: italic;
+}
+.legal-close b {
+  color: #8c2533;
+  font-family: Arial, sans-serif;
+  font-size: 6pt;
+  letter-spacing: 0.1em;
+}
+.law-page .page-footnote {
+  margin-top: 2mm;
+  border-top: 0.25mm solid #5e1521;
+  padding-top: 1.5mm;
+  font-family: "Times New Roman", serif;
+  font-size: 6pt;
+}
+
+/* 04 / DATA JOURNALISM */
+.rr-page.press-page {
+  background: #f6f0e2;
+}
+.press-layout {
+  display: grid;
+  grid-template-rows: 13mm 1fr 11mm;
+  height: 100%;
+  padding: 9mm 13mm 7mm;
+  color: #1d1d1b;
+}
+.press-layout > header,
+.press-layout > footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.7mm solid #1d1d1b;
+  padding-top: 2mm;
+  font-size: 5.4pt;
+  line-height: 1.45;
+  letter-spacing: 0.08em;
+}
+.press-layout > header > div:first-child b {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 12pt;
+  letter-spacing: -0.02em;
+}
+.press-layout > header > div:first-child span {
+  color: #e33422;
+  font-size: 5pt;
+  font-weight: 800;
+}
+.press-layout > header > div:last-child {
+  text-align: right;
+}
+.press-layout main {
+  min-height: 0;
+}
+.press-layout h1 {
+  margin: 2mm 0;
+  font-family: Georgia, serif;
+  font-size: 40pt;
+  line-height: 0.82;
+  font-weight: 700;
+  letter-spacing: -0.045em;
+}
+.press-layout h1 i {
+  color: #e33422;
+  font-weight: 400;
+}
+.press-deck {
+  width: 142mm;
+  margin: 6mm 0;
+  font-family: Georgia, serif;
+  font-size: 12.5pt;
+  line-height: 1.4;
+}
+.press-byline {
+  display: flex;
+  gap: 8mm;
+  border-top: 0.3mm solid #1d1d1b;
+  border-bottom: 0.3mm solid #1d1d1b;
+  padding: 2mm 0;
+  font-size: 5.8pt;
+}
+.press-columns {
+  display: grid;
+  grid-template-columns: 0.65fr 1.35fr;
+  gap: 6mm;
+  margin-top: 7mm;
+}
+.press-columns section:first-child {
+  border-right: 0.25mm solid #ad9e88;
+  padding-right: 5mm;
+}
+.press-columns p {
+  margin: 0 0 3mm;
+  font-family: Georgia, serif;
+  font-size: 8pt;
+  line-height: 1.6;
+  text-align: justify;
+}
+.press-opening::first-letter {
+  float: left;
+  margin-right: 1mm;
+  color: #e33422;
+  font-size: 32pt;
+  line-height: 0.66;
+}
+.press-columns blockquote {
+  margin: 4mm 0 0;
+  border-top: 1mm solid #efb52b;
+  padding-top: 3mm;
+}
+.press-columns blockquote strong {
+  display: block;
+  font-size: 30pt;
+  line-height: 1;
+}
+.press-columns blockquote span {
+  font-size: 6.5pt;
+  line-height: 1.4;
+}
+.press-figure {
+  margin: 0;
+}
+.press-figure svg {
+  display: block;
+  width: 100%;
+  height: 96mm;
+}
+.press-figure figcaption {
+  display: grid;
+  grid-template-columns: 16mm 1fr;
+  border-top: 0.4mm solid #1d1d1b;
+  padding-top: 1.5mm;
+  font-size: 5.3pt;
+}
+.press-figure figcaption b {
+  color: #e33422;
+}
+.press-legend {
+  display: flex;
+  gap: 5mm;
+  margin-top: 2mm;
+  font-size: 5pt;
+}
+.press-legend i {
+  display: inline-block;
+  margin-right: 1mm;
+}
+.press-legend .bar {
+  width: 4mm;
+  height: 2mm;
+  background: #efb52b;
+}
+.press-legend .dot {
+  width: 2mm;
+  height: 2mm;
+  border-radius: 50%;
+  background: #1d1d1b;
+}
+.press-legend b {
+  margin-left: auto;
+  font-weight: 400;
+}
+.press-findings {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4mm;
+  margin-top: 10mm;
+}
+.press-findings article {
+  border-top: 1mm solid #1d1d1b;
+  padding-top: 3.5mm;
+}
+.press-findings b {
+  color: #e33422;
+  font-size: 6pt;
+}
+.press-findings h2 {
+  margin: 2mm 0;
+  font-family: Georgia, serif;
+  font-size: 11pt;
+}
+.press-findings p {
+  margin: 0;
+  font-size: 6.5pt;
+  line-height: 1.5;
+}
+.press-layout > footer {
+  align-items: end;
+  border-top-width: 0.3mm;
+}
+
+/* 05 / PHYSICS */
+.rr-page.physics-page {
+  background: #050914;
+}
+.physics-layout {
+  display: grid;
+  grid-template-rows: 15mm 1fr 10mm;
+  height: 100%;
+  padding: 10mm 13mm 7mm;
+  color: #eef8ff;
+}
+.physics-layout > header,
+.physics-layout > footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.3mm solid #22e4ff;
+  padding-top: 2mm;
+  font-size: 5.2pt;
+  line-height: 1.45;
+  letter-spacing: 0.12em;
+}
+.physics-layout > header b {
+  display: block;
+  color: #22e4ff;
+  font-size: 7pt;
+}
+.physics-layout > header div:last-child {
+  text-align: right;
+}
+.physics-layout main {
+  position: relative;
+  min-height: 0;
+}
+.physics-title {
+  position: absolute;
+  top: 4mm;
+  left: 0;
+  z-index: 2;
+  width: 67mm;
+}
+.physics-title h1 {
+  margin: 2mm 0;
+  font-size: 31pt;
+  line-height: 0.86;
+  letter-spacing: -0.045em;
+}
+.physics-title p {
+  margin: 4mm 0;
+  color: #93a6b7;
+  font-size: 7.5pt;
+  line-height: 1.45;
+}
+.physics-event {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 184mm;
+  margin: 0;
+}
+.physics-event svg {
+  display: block;
+  width: 100%;
+  height: 125mm;
+}
+.physics-event figcaption {
+  display: grid;
+  grid-template-columns: 18mm 1fr;
+  border-top: 0.25mm solid #22e4ff;
+  padding-top: 1.5mm;
+  color: #93a6b7;
+  font-size: 5.3pt;
+}
+.physics-event figcaption b {
+  color: #d5ff35;
+}
+.physics-readout {
+  position: absolute;
+  top: 62mm;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 67mm;
+  border: 0.25mm solid #324455;
+}
+.physics-readout div {
+  min-height: 27mm;
+  border-right: 0.25mm solid #324455;
+  border-bottom: 0.25mm solid #324455;
+  padding: 3mm;
+}
+.physics-readout span {
+  display: block;
+  color: #22e4ff;
+  font-size: 4.8pt;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+.physics-readout b {
+  font-size: 15pt;
+}
+.physics-readout small {
+  display: block;
+  color: #7f91a1;
+  font-size: 4.8pt;
+}
+.physics-equation {
+  position: absolute;
+  right: 0;
+  bottom: 35mm;
+  width: 184mm;
+  border: 0.25mm solid #324455;
+  background: #0b1222;
+  padding: 3mm 5mm;
+}
+.physics-equation > span {
+  color: #ff3dbb;
+  font-size: 5pt;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+.physics-equation .rr-math-display {
+  margin: 1mm;
+  font-size: 10pt;
+}
+.physics-notes {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 184mm;
+}
+.physics-notes article {
+  border-top: 0.5mm solid #22e4ff;
+  padding: 2.5mm 4mm 0 0;
+}
+.physics-notes b {
+  color: #d5ff35;
+  font-size: 5pt;
+  letter-spacing: 0.1em;
+}
+.physics-notes p {
+  margin: 1mm 0 0;
+  color: #93a6b7;
+  font-size: 5.5pt;
+  line-height: 1.4;
+}
+.physics-layout > footer {
+  align-items: end;
+  border-top-color: #324455;
+}
+
+/* 06 / MARKETING */
+.rr-page.campaign-page {
+  background: linear-gradient(145deg, #ede9ff 0%, #b7b7ff 46%, #a7ff5a 100%);
+}
+.campaign-layout {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  padding: 14mm;
+  color: #17182f;
+}
+.campaign-layout::before {
+  content: "";
+  position: absolute;
+  top: -35mm;
+  right: -30mm;
+  width: 165mm;
+  height: 165mm;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.36);
+  filter: blur(1mm);
+}
+.campaign-layout header,
+.campaign-layout footer {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-top: 0.45mm solid #17182f;
+  padding-top: 2.5mm;
+  font-size: 5.5pt;
+  letter-spacing: 0.12em;
+}
+.campaign-layout header b {
+  font-size: 8pt;
+}
+.campaign-layout header span:last-child {
+  text-align: right;
+}
+.campaign-layout > svg {
+  position: absolute;
+  z-index: 2;
+  top: 31mm;
+  right: 0;
+  width: 120mm;
+  height: 145mm;
+}
+.campaign-orbit {
+  position: absolute;
+  top: 20mm;
+  right: -28mm;
+  width: 155mm;
+  height: 155mm;
+}
+.campaign-orbit i {
+  position: absolute;
+  border: 0.4mm solid rgba(23, 24, 47, 0.22);
+  border-radius: 50%;
+}
+.campaign-orbit i:nth-child(1) {
+  inset: 0;
+}
+.campaign-orbit i:nth-child(2) {
+  inset: 19mm;
+}
+.campaign-orbit i:nth-child(3) {
+  inset: 38mm;
+}
+.campaign-layout main {
+  position: absolute;
+  z-index: 3;
+  top: 62mm;
+  left: 14mm;
+  width: 96mm;
+}
+.campaign-layout h1 {
+  margin: 4mm 0;
+  font-size: 39pt;
+  line-height: 0.88;
+  letter-spacing: -0.055em;
+}
+.campaign-layout h1 i {
+  color: #2026ff;
+  font-weight: 400;
+}
+.campaign-layout main p {
+  width: 72mm;
+  margin-top: 7mm;
+  font-size: 9pt;
+  line-height: 1.45;
+}
+.campaign-actions {
+  display: flex;
+  align-items: center;
+  gap: 6mm;
+  margin-top: 8mm;
+}
+.campaign-actions b {
+  background: #17182f;
+  color: white;
+  padding: 3mm 4mm;
+  font-size: 5.5pt;
+  letter-spacing: 0.1em;
+}
+.campaign-actions span {
+  font-size: 6pt;
+}
+.campaign-specs {
+  position: absolute;
+  z-index: 3;
+  right: 14mm;
+  bottom: 31mm;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 70mm;
+  background: rgba(255, 255, 255, 0.57);
+  backdrop-filter: blur(4px);
+}
+.campaign-specs div {
+  min-height: 25mm;
+  border-right: 0.25mm solid rgba(23, 24, 47, 0.25);
+  border-bottom: 0.25mm solid rgba(23, 24, 47, 0.25);
+  padding: 4mm;
+}
+.campaign-specs b {
+  display: block;
+  font-size: 15pt;
+}
+.campaign-specs span {
+  font-size: 5pt;
+  letter-spacing: 0.1em;
+}
+.campaign-layout footer {
+  position: absolute;
+  right: 14mm;
+  bottom: 11mm;
+  left: 14mm;
+  grid-template-columns: 1fr 1fr;
+}
+.campaign-layout footer span:last-child {
+  text-align: right;
+}
+
+/* 07 / FINANCE */
+.rr-page.finance-page {
+  background: #f7f6f0;
+}
+.finance-layout {
+  display: grid;
+  grid-template-rows: 13mm 1fr 10mm;
+  height: 100%;
+  padding: 9mm 14mm 7mm;
+  color: #12201c;
+}
+.finance-layout > header,
+.finance-layout > footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.45mm solid #12201c;
+  padding-top: 2mm;
+  font-size: 5.3pt;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+}
+.finance-layout > header b {
+  font-size: 9pt;
+}
+.finance-layout > header span {
+  margin-left: 5mm;
+  color: #0b6856;
+  font-weight: 800;
+}
+.finance-layout > header div:last-child {
+  text-align: right;
+}
+.finance-title {
+  display: grid;
+  grid-template-columns: 1fr 55mm;
+  gap: 6mm;
+  margin-top: 4mm;
+}
+.finance-title h1 {
+  margin: 2mm 0 5mm;
+  font-size: 27pt;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+}
+.finance-title aside {
+  background: #0b6856;
+  color: white;
+  padding: 4mm;
+}
+.finance-title aside b {
+  color: #b8ff7d;
+  font-size: 5pt;
+  letter-spacing: 0.1em;
+}
+.finance-title aside p {
+  margin: 2mm 0;
+  font-size: 7pt;
+  line-height: 1.4;
+}
+.finance-title aside strong {
+  font-size: 19pt;
+}
+.finance-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5mm;
+  margin: 3mm 0 5mm;
+}
+.finance-kpis article {
+  border-top: 0.7mm solid #12201c;
+  background: white;
+  padding: 3mm;
+}
+.finance-kpis span {
+  display: block;
+  font-size: 5pt;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+.finance-kpis b {
+  display: block;
+  margin: 2mm 0 1mm;
+  font-size: 17pt;
+}
+.finance-kpis em {
+  color: #0b6856;
+  font-size: 6pt;
+  font-style: normal;
+  font-weight: 800;
+}
+.finance-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 5mm;
+}
+.finance-grid > section {
+  border-top: 0.35mm solid #12201c;
+  padding-top: 2mm;
+}
+.finance-section-title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 5.3pt;
+  letter-spacing: 0.1em;
+}
+.finance-grid svg {
+  width: 100%;
+  height: 58mm;
+}
+.finance-comment {
+  display: grid;
+  grid-template-columns: 16mm 1fr;
+  background: #dfece7;
+  padding: 2.5mm;
+  font-size: 6pt;
+}
+.finance-comment p {
+  margin: 0;
+}
+.finance-grid table {
+  width: 100%;
+  margin-top: 4mm;
+  border-collapse: collapse;
+  font-size: 6.5pt;
+}
+.finance-grid th {
+  background: #12201c;
+  color: white;
+  padding: 2.3mm;
+  text-align: left;
+  font-size: 5pt;
+}
+.finance-grid td {
+  border-bottom: 0.25mm solid #d4d8d5;
+  padding: 2.6mm 2.3mm;
+}
+.finance-grid tr:last-child {
+  font-weight: 800;
+}
+.finance-risk {
+  margin-top: 4mm;
+  border-left: 1mm solid #e5a641;
+  background: #fbf0d8;
+  padding: 3mm;
+}
+.finance-risk span {
+  color: #a76600;
+  font-size: 5pt;
+  font-weight: 800;
+}
+.finance-risk b {
+  display: block;
+  margin-top: 1mm;
+  font-size: 8pt;
+}
+.finance-risk p {
+  margin: 1mm 0 0;
+  font-size: 5.7pt;
+}
+.finance-bridge {
+  display: grid;
+  grid-template-columns: repeat(9, auto);
+  align-items: center;
+  gap: 2mm;
+  margin-top: 4mm;
+  border: 0.3mm solid #12201c;
+  padding: 3mm;
+}
+.finance-bridge span {
+  font-size: 4.8pt;
+}
+.finance-bridge span b {
+  display: block;
+  font-size: 10pt;
+}
+.finance-bridge i {
+  font-style: normal;
+  font-weight: 800;
+}
+.finance-bridge .total {
+  background: #0b6856;
+  color: white;
+  padding: 2mm;
+}
+.finance-outlook {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr 0.9fr;
+  gap: 3mm;
+  margin-top: 3mm;
+}
+.finance-outlook > section,
+.finance-outlook > aside {
+  min-height: 33mm;
+  border-top: 0.6mm solid #12201c;
+  background: white;
+  padding: 2.5mm;
+}
+.finance-outlook section > div > span,
+.finance-outlook section > span,
+.finance-outlook aside > span {
+  display: block;
+  color: #0b6856;
+  font-size: 5pt;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+.finance-outlook section > div > b {
+  display: block;
+  margin: 2mm 0 1mm;
+  font-size: 17pt;
+}
+.finance-outlook small {
+  color: #68746f;
+  font-size: 5pt;
+}
+.outlook-track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1mm;
+  margin-top: 5mm;
+}
+.outlook-track i {
+  height: 4mm;
+  background: #dfece7;
+}
+.outlook-track i:nth-child(2) {
+  background: #69aa94;
+}
+.outlook-track b {
+  position: absolute;
+  top: 5mm;
+  left: 38%;
+  font-size: 4.5pt;
+}
+.allocation-row {
+  display: grid;
+  grid-template-columns: 31mm 1fr 8mm;
+  align-items: center;
+  gap: 2mm;
+  margin-top: 1.6mm;
+}
+.allocation-row b,
+.allocation-row span {
+  font-size: 4.8pt;
+}
+.allocation-row > i {
+  display: block;
+  height: 2mm;
+  background: #dfe4e1;
+}
+.allocation-row em {
+  display: block;
+  height: 100%;
+  background: #0b6856;
+}
+.finance-outlook ol {
+  margin: 2mm 0 0;
+  padding: 0;
+  list-style: none;
+}
+.finance-outlook li {
+  display: grid;
+  grid-template-columns: 15mm 1fr;
+  border-top: 0.2mm solid #d4d8d5;
+  padding: 2mm 0;
+  font-size: 5.2pt;
+}
+.finance-outlook li b {
+  color: #0b6856;
+}
+.finance-layout > footer {
+  align-items: end;
+  border-top-width: 0.25mm;
+}
+
+/* 08 / ARCHITECTURE */
+.rr-page.blueprint-page {
+  background: #1648a8;
+}
+.blueprint-layout {
+  display: grid;
+  grid-template-rows: 15mm 1fr 10mm;
+  height: 100%;
+  padding: 10mm 14mm 7mm;
+  color: white;
+}
+.blueprint-layout > header,
+.blueprint-layout > footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.35mm solid #fff;
+  padding-top: 2mm;
+  font-size: 5.2pt;
+  line-height: 1.5;
+  letter-spacing: 0.11em;
+}
+.blueprint-layout > header b {
+  display: block;
+  color: #ffcf45;
+  font-size: 8pt;
+}
+.blueprint-layout > header div:last-child {
+  text-align: right;
+}
+.blueprint-layout main {
+  position: relative;
+  min-height: 0;
+}
+.blueprint-title {
+  position: absolute;
+  top: 5mm;
+  left: 0;
+  width: 65mm;
+}
+.blueprint-title h1 {
+  margin: 3mm 0;
+  font-size: 28pt;
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+}
+.blueprint-title p {
+  color: #bdd2ff;
+  font-size: 7pt;
+  line-height: 1.45;
+}
+.blueprint-plan {
+  position: absolute;
+  top: 2mm;
+  right: 0;
+  width: 260mm;
+}
+.blueprint-plan > svg {
+  width: 100%;
+  height: 131mm;
+}
+.blueprint-labels span {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7mm;
+  height: 7mm;
+  border-radius: 50%;
+  background: #ffcf45;
+  color: #1648a8;
+  font-size: 5pt;
+  font-weight: 800;
+}
+.blueprint-labels span:nth-child(1) {
+  top: 14mm;
+  left: 18mm;
+}
+.blueprint-labels span:nth-child(2) {
+  top: 14mm;
+  right: 35mm;
+}
+.blueprint-labels span:nth-child(3) {
+  bottom: 22mm;
+  left: 44mm;
+}
+.blueprint-labels span:nth-child(4) {
+  bottom: 26mm;
+  right: 24mm;
+}
+.blueprint-data {
+  position: absolute;
+  top: 63mm;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 65mm;
+  border: 0.25mm solid #8fb2ff;
+}
+.blueprint-data div {
+  min-height: 24mm;
+  border-right: 0.25mm solid #8fb2ff;
+  border-bottom: 0.25mm solid #8fb2ff;
+  padding: 3mm;
+}
+.blueprint-data span {
+  display: block;
+  color: #ffcf45;
+  font-size: 4.7pt;
+  font-weight: 800;
+}
+.blueprint-data b {
+  font-size: 11pt;
+}
+.blueprint-section {
+  position: absolute;
+  right: 0;
+  bottom: 25mm;
+  width: 238mm;
+  height: 65mm;
+}
+.blueprint-section svg {
+  width: 100%;
+  height: 100%;
+}
+.blueprint-notes {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 260mm;
+}
+.blueprint-notes article {
+  border-top: 0.5mm solid #ffcf45;
+  padding: 2.5mm 5mm 0 0;
+}
+.blueprint-notes b {
+  color: #ffcf45;
+  font-size: 5pt;
+  letter-spacing: 0.1em;
+}
+.blueprint-notes p {
+  margin: 1mm 0 0;
+  color: #bdd2ff;
+  font-size: 5.5pt;
+  line-height: 1.4;
+}
+.blueprint-stamp {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 55mm;
+  border: 0.6mm solid #ffcf45;
+  padding: 3mm;
+  transform: rotate(-3deg);
+}
+.blueprint-stamp span {
+  font-size: 4.5pt;
+}
+.blueprint-stamp b {
+  display: block;
+  color: #ffcf45;
+  font-size: 13pt;
+  letter-spacing: 0.12em;
+}
+.blueprint-stamp small {
+  font-size: 5pt;
+}
+.blueprint-layout > footer {
+  align-items: end;
+  border-top-color: #8fb2ff;
+}
+
+/* 09 / NONFICTION */
+.rr-page.nonfiction-page {
+  background: #f3ead8;
+}
+.book-frame {
+  display: grid;
+  grid-template-rows: 10mm minmax(0, 1fr) auto 10mm;
+  height: 100%;
+  padding: 7mm 12mm;
+  color: #1c1a17;
+}
+.book-frame > header,
+.book-frame > footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.25mm solid #1c1a17;
+  font-family: Georgia, serif;
+  font-size: 5pt;
+  letter-spacing: 0.1em;
+}
+.book-frame > footer {
+  border-bottom: 0;
+}
+.book-frame > main {
+  min-height: 0;
+  padding: 4mm 0 1mm;
+}
+.book-layout {
+  font-family: Georgia, "Times New Roman", serif;
+}
+.book-layout h1 {
+  margin: 2mm 0 0;
+  font-size: 23pt;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+.book-layout > header p {
+  margin: 1mm 0 3mm;
+  font-size: 7pt;
+  font-style: italic;
+}
+.book-etching {
+  float: right;
+  width: 61mm;
+  margin: 0 0 3mm 4mm;
+}
+.book-etching svg {
+  display: block;
+  width: 100%;
+  height: 43mm;
+}
+.book-etching figcaption {
+  border-top: 0.25mm solid #1c1a17;
+  padding-top: 1mm;
+  font-size: 4.5pt;
+  font-style: italic;
+}
+.book-layout > p {
+  margin: 0 0 2.5mm;
+  font-size: 7.1pt;
+  line-height: 1.55;
+  text-align: justify;
+}
+.book-opening::first-letter {
+  float: left;
+  margin: 0 1mm 0 0;
+  color: #a83822;
+  font-size: 31pt;
+  line-height: 0.74;
+}
+.book-layout blockquote {
+  clear: both;
+  margin: 4mm 0;
+  border-top: 0.5mm solid #a83822;
+  border-bottom: 0.5mm solid #a83822;
+  padding: 3mm 0;
+  color: #a83822;
+  font-size: 11pt;
+  line-height: 1.25;
+  font-style: italic;
+}
+.book-layout .rr-math-display {
+  margin: 3mm 0;
+  font-size: 7.5pt;
+}
+.book-end {
+  margin-top: 4mm;
+  text-align: center;
+  color: #a83822;
+  font-size: 7pt;
+}
+.nonfiction-page .page-footnote {
+  margin-top: 2mm;
+  border-top: 0.25mm solid #a83822;
+  padding-top: 1.5mm;
+  font-family: Georgia, serif;
+  font-size: 5pt;
+}
+
+/* 10 / SYSTEM */
+.rr-page.index-page {
+  background: #f4efe3;
+}
+.index-layout {
+  display: grid;
+  grid-template-rows: 15mm 1fr 35mm 12mm;
+  height: 100%;
+  padding: 12mm;
+  background: #f4efe3;
+}
+.index-layout > header,
+.index-layout > footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.6mm solid #111;
+  padding-top: 2mm;
+  font-size: 5.2pt;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+}
+.index-layout > header b {
+  font-size: 11pt;
+}
+.index-layout > header span {
+  margin-left: 3mm;
+}
+.index-layout > header div:last-child {
+  text-align: right;
+}
+.index-layout main {
+  display: grid;
+  grid-template-columns: 70mm 1fr;
+  gap: 7mm;
+  padding-top: 8mm;
+}
+.index-title h1 {
+  margin: 4mm 0;
+  font-size: 29pt;
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+}
+.index-title h1 i {
+  color: #ff4b00;
+  font-weight: 400;
+}
+.specimen-index {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.specimen-index li {
+  border-top: 0.25mm solid #111;
+}
+.specimen-index a {
+  display: grid;
+  grid-template-columns: 9mm 1fr 7mm;
+  align-items: center;
+  min-height: 11mm;
+  color: #111;
+  text-decoration: none;
+}
+.specimen-index b {
+  color: #2026ff;
+  font-size: 6pt;
+}
+.specimen-index span {
+  font-size: 6.2pt;
+  font-weight: 700;
+}
+.specimen-index em {
+  color: #ff4b00;
+  font-size: 6pt;
+  font-style: normal;
+  text-align: right;
+}
+.index-layout > aside {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #111;
+  color: white;
+}
+.index-layout > aside div {
+  padding: 5mm;
+  border-right: 0.25mm solid rgba(255, 255, 255, 0.25);
+}
+.index-layout > aside b {
+  display: block;
+  color: #d5ff35;
+  font-size: 20pt;
+}
+.index-layout > aside span {
+  font-size: 5pt;
+  letter-spacing: 0.1em;
+}
+.index-layout > footer {
+  align-items: end;
+}
+
+.campaign-layout::before {
+  filter: none;
+}

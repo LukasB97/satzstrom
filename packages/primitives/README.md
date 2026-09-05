@@ -9,6 +9,8 @@ npm install @satzstrom/primitives react react-dom
 The package includes document, page, flow, sequence, reference, footnote, and
 mathematics primitives. It contains no native renderer implementation.
 
+`Document` metadata is optional and absent fields are omitted from the PDF. PDF/UA-1 output requires a usable `title`. In a custom `PageMaster` layout, `Flow` is the accessibility boundary: layout branches outside it are hidden automatically unless an intentional branch uses `aria-hidden="false"`.
+
 ## Markdown
 
 `Markdown` renders unstyled semantic HTML from GitHub Flavored Markdown. Inline

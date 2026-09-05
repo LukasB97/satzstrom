@@ -1,6 +1,6 @@
 {
   "name": "satzstrom",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Install and launch the Satzstrom PDF renderer for your platform",
   "license": "MIT",
   "bin": {
@@ -12,8 +12,8 @@
     "LICENSE"
   ],
   "optionalDependencies": {
-    "@satzstrom/win32-x64": "0.1.1",
-    "@satzstrom/linux-x64": "0.1.1"
+    "@satzstrom/win32-x64": "0.1.2",
+    "@satzstrom/linux-x64": "0.1.2"
   },
   "engines": {
     "node": ">=20"
