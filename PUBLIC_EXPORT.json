@@ -40,7 +40,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "77b0214099d92f9848ba02b33ad0445ffa53febfc38bb8ba95a4fd8bc587a74f"
+      "sha256": "3e9c2e84630ee362c6bceca5c092b92e9f1dae91ea6980b25a518429cbffdd3f"
     },
     {
       "path": "SECURITY.md",
@@ -72,7 +72,11 @@
     },
     {
       "path": "examples/README.md",
-      "sha256": "a05ed2dfadead3dd84c9a70d79a99ae08a2100ec6502e16de5213a906741e40d"
+      "sha256": "abdbe68674cd662f108a5db3d3685396b1b734689de82b0a4e6e63085888374d"
+    },
+    {
+      "path": "examples/aurelis-material-notes/README.md",
+      "sha256": "27ed73ad601490fffedcd53e5256bab920987fe1c454a561c1b5919c57ea8e5f"
     },
     {
       "path": "examples/aurelis-material-notes/data.json",
@@ -91,6 +95,30 @@
       "sha256": "125b4d5545612dbfd90acfbfdb915f2da8a392bc2c9b0845100b68493e46d869"
     },
     {
+      "path": "examples/beyond-the-room/LICENSE",
+      "sha256": "58b2cc2109e16c40c9c31f7fccbdaba4b1367287540dcedf8005962087a8b700"
+    },
+    {
+      "path": "examples/beyond-the-room/README.md",
+      "sha256": "26d8edd7bd1a6fbbc9304d3a4da5b36af5f7fd9943da155ade239fa01345ee46"
+    },
+    {
+      "path": "examples/beyond-the-room/credits.txt",
+      "sha256": "8baa4c15058101e2e2eb5eb1082289603935fc3c0f7f2ab3c2925631b0243154"
+    },
+    {
+      "path": "examples/beyond-the-room/document.tsx",
+      "sha256": "1945973500d839423818edbd947e30431aafc598e255c550c0a1145c8b8a8b33"
+    },
+    {
+      "path": "examples/beyond-the-room/styles.css",
+      "sha256": "3506ebb6bc5311030100884f79a8ddf42d6f1dbd56441e0cde83adee7cc57758"
+    },
+    {
+      "path": "examples/deep-space-atlas/README.md",
+      "sha256": "f8497ddc2731e2a4761e062d40d0297f183ab3f2063344bef69714be3bf84d3a"
+    },
+    {
       "path": "examples/deep-space-atlas/data.json",
       "sha256": "c2d92285a36471f22a32c397706840f76b012a734aea98d4e6bb397217053f6e"
     },
@@ -105,6 +133,10 @@
     {
       "path": "examples/deep-space-atlas/visuals.tsx",
       "sha256": "d87d775cf7f143dcd1000a92442a7e4f163cd8a3246edc44659886cf39ee7a4e"
+    },
+    {
+      "path": "examples/enterprise-board-pack/README.md",
+      "sha256": "d50566ef0bfab2633de55fd814fdbcc80c3c28b7a5ae026ccad49f5c1b84a642"
     },
     {
       "path": "examples/enterprise-board-pack/closing-pages.tsx",
@@ -143,6 +175,10 @@
       "sha256": "0cc84aa10bf0bba1e91ccfa55d0c977ea6be93cbf24c9ff580ad2f8bd18b771e"
     },
     {
+      "path": "examples/invoice/README.md",
+      "sha256": "c8c8afd3c287e6b2f47e7f7e2037a32de692bfea57a5b57a9cfe9703b9b012f7"
+    },
+    {
       "path": "examples/invoice/data.json",
       "sha256": "7eaa07044bd7c0bfb5a50baba1d399e5116ab1363f6e9bc05a0c834ce130441e"
     },
@@ -153,6 +189,10 @@
     {
       "path": "examples/invoice/styles.css",
       "sha256": "a1d9d6f013615c8df08644deb64a0dd9a60d39545f02b8c71772592581536d36"
+    },
+    {
+      "path": "examples/mathematics/README.md",
+      "sha256": "ab164a95db267b77b4106494456c7a943fdfb94d77e5a902160b44f83ab4fab2"
     },
     {
       "path": "examples/mathematics/data.json",
@@ -173,6 +213,10 @@
     {
       "path": "examples/shared/page-frame.tsx",
       "sha256": "377c73d52f855594b4c5f3628b8d59423c833c0e706635e133a35e4b7bf026dd"
+    },
+    {
+      "path": "examples/specimen-book/README.md",
+      "sha256": "5d9b9d10651b1aa7a8d2d8f07d4e32077e8586d3a966212a63aae16b2135c86f"
     },
     {
       "path": "examples/specimen-book/closing-pages.tsx",

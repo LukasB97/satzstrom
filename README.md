@@ -216,7 +216,7 @@ Satzstrom currently produces sRGB output. CMYK separation, spot colors, and PDF/
 
 These are rendered documents, not design mockups. See more output on the [examples page](https://satzstrom.com/examples).
 
-The public repository contains the complete sources for all six gallery documents, a shared page frame, and a small [starter project](./examples/starter). Follow the [example guide](./examples/README.md) to run the invoice end to end or open any other gallery project.
+The public repository contains the complete sources for all seven gallery documents, a shared page frame, and a small [starter project](./examples/starter). Follow the [example guide](./examples/README.md) to run the invoice end to end or open any other gallery project.
 
 ## Public preview
 
@@ -253,7 +253,7 @@ This repository contains the public parts of Satzstrom Community Edition:
 - The cross-platform CLI launcher
 - Documentation
 - The Satzstrom skill
-- Six complete gallery examples and a starter example
+- Seven complete gallery examples and a starter example
 - Public tests and CI
 
 These files are licensed under the [MIT License](./LICENSE).
