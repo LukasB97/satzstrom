@@ -14,6 +14,7 @@ npm install -g satzstrom
 git clone https://github.com/LukasB97/satzstrom.git
 cd satzstrom
 pnpm install
+pnpm build
 cd examples/beyond-the-room
 satzstrom dev document.tsx
 ```

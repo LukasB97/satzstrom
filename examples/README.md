@@ -13,6 +13,7 @@ npm install -g satzstrom
 git clone https://github.com/LukasB97/satzstrom.git
 cd satzstrom
 pnpm install
+pnpm build
 cd examples/invoice
 satzstrom dev document.tsx --data data.json
 ```
