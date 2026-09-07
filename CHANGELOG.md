@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.4 - 2026-09-07
+
+- Require an explicit `Footnotes` region in page layouts; existing footnote documents must add the region. Its position, styling and maximum height belong to the layout.
+- Share footnote numbering and back-links between Markdown and JSX and support dollar-delimited math.
+- Support regular Fontsource imports under Node and Bun and explain missing assets with their source location.
+- Explain page breaks and oversized content in the preview, CLI and MCP, including required and available space.
+- Keep layout explanations beside the document and clarify layout checks and PDF output profiles.
+- Improve doctor version reporting, custom page orientation and authoring documentation.
+
 ## 0.1.3 - 2026-09-07
 
 - Preserve SVG content in flowing layouts and report integrity problems.

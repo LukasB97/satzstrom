@@ -15,7 +15,7 @@ test("Markdown renders GFM and Satzstrom math as semantic markup", () => {
 | - | ----: |
 | 1 |     1 |
 
-Inline $$F_n=F_{n-1}+F_{n-2}$$.
+Inline $F_n=F_{n-1}+F_{n-2}$.
 
 $$
 F_n=\left[\frac{1}{\sqrt 5}\varphi^n\right]
@@ -84,8 +84,9 @@ test("Markdown footnote labels follow the document language", () => {
     ),
   );
 
-  assert.match(html, />Fußnoten<\/h2>/u);
-  assert.match(html, /aria-label="Zurück zu Verweis 1"/u);
+  assert.match(html, /aria-label="Fußnote"/u);
+  assert.match(html, /data-rr-back-label="Zurück zu Verweis 1"/u);
+  assert.doesNotMatch(html, /data-footnotes=|<h2/u);
   assert.doesNotMatch(html, /Footnotes|Back to reference/u);
 });
 
@@ -109,6 +110,6 @@ test("Markdown footnote labels can be overridden", () => {
     ),
   );
 
-  assert.match(html, />Sources<\/h2>/u);
-  assert.match(html, /aria-label="Return to source 1"/u);
+  assert.match(html, /aria-label="Sources"/u);
+  assert.match(html, /data-rr-back-label="Return to source 1"/u);
 });

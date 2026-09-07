@@ -101,7 +101,7 @@ Standard CSS break rules keep related content together. Structures that cannot b
 
 The public React primitives focus on physical or document-semantic structure:
 
-`Document`, `Page`, `PageMaster`, `Flow`, `PageBreak`, `RepeatBox`, `Sequence`, `Contents`, `Ref`, `Footnote`, `Math`, `Markdown`, and `useRenderReady`.
+`Document`, `Page`, `PageMaster`, `Flow`, `PageBreak`, `RepeatBox`, `Sequence`, `Contents`, `Ref`, `Footnote`, `Footnotes`, `Math`, `Markdown`, and `useRenderReady`.
 
 Everything else remains ordinary React composition.
 
@@ -220,7 +220,7 @@ The public repository contains the complete sources for all seven gallery docume
 
 ## Public preview
 
-Satzstrom 0.1.3 is a public preview. Breaking changes may occur during the `0.x` series and are documented in the [changelog](./CHANGELOG.md) with migration notes.
+Satzstrom 0.1.4 is a public preview. Breaking changes may occur during the `0.x` series and are documented in the [changelog](./CHANGELOG.md) with migration notes.
 
 Supported platforms are:
 
@@ -274,6 +274,8 @@ Read [CONTRIBUTING.md](./CONTRIBUTING.md) before beginning substantial work.
 
 ## Support and security
 
-Satzstrom 0.1.3 has community support without an SLA. See [SUPPORT.md](./SUPPORT.md) when reporting a problem.
+Satzstrom 0.1.4 has community support without an SLA. See [SUPPORT.md](./SUPPORT.md) when reporting a problem.
 
 Please report vulnerabilities privately through GitHub Private Vulnerability Reporting. See [SECURITY.md](./SECURITY.md) for details.
+
+Footnotes require an empty `<Footnotes />` in the PageMaster layout or fixed Page. Authors control its style and optional maximum height. It is hidden when empty and adds no separator. Markdown and JSX share numbering and placement; long notes continue within their PageMaster, while fixed Pages report overflow.

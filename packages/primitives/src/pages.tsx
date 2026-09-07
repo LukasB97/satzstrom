@@ -39,7 +39,11 @@ function pageAttributes(settings: PageSettings = {}) {
   }
   const size = settings.size ?? "A4";
   let [width, height] = typeof size === "string" ? pageSizes[size] : [size.width, size.height];
-  if (settings.orientation === "landscape") [width, height] = [height, width];
+  if (
+    (settings.orientation === "landscape" && width < height) ||
+    (settings.orientation === "portrait" && width > height)
+  )
+    [width, height] = [height, width];
   return {
     "data-rr-page-width": width,
     "data-rr-page-height": height,
@@ -59,6 +63,7 @@ export type DocumentProps = DocumentMetadata & {
 export type { DocumentLabels } from "./document-context.js";
 
 const PageMasterLayoutContext = createContext(false);
+const FixedPageContext = createContext(false);
 
 export type FlowProps = Omit<
   ComponentPropsWithoutRef<"div">,
@@ -70,6 +75,20 @@ export function Flow(props: FlowProps) {
     throw new Error("Flow can only be used inside a PageMaster layout.");
   }
   return <div {...props} data-rr-master-flow="" />;
+}
+
+export type FootnotesProps = Omit<
+  ComponentPropsWithoutRef<"aside">,
+  "children" | "dangerouslySetInnerHTML"
+>;
+
+export function Footnotes(props: FootnotesProps) {
+  const labels = useContext(DocumentLabelsContext);
+  const master = useContext(PageMasterLayoutContext);
+  const fixed = useContext(FixedPageContext);
+  if (!master && !fixed)
+    throw new Error("Footnotes can only be used inside a Page or PageMaster layout.");
+  return <aside aria-label={labels.footnotes} {...props} data-rr-footnotes="" />;
 }
 
 export function Document({
@@ -190,7 +209,7 @@ export function Page({
       data-rr-page-class={className}
       {...pageAttributes({ size, orientation, bleed, cropMarks })}
     >
-      {content}
+      <FixedPageContext value>{content}</FixedPageContext>
     </section>
   );
 }

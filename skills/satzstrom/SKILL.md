@@ -3,6 +3,8 @@ name: satzstrom
 description: Author and refine Satzstrom projects using React, project dependencies, local document inspection, and PDF rendering.
 ---
 
+Documentation revision: 2026-09-07.
+
 # Satzstrom
 
 Satzstrom is a rendering engine that turns ordinary React code—with its components, data, styling, and libraries—into precisely paginated PDFs with LaTeX-quality typesetting.
@@ -29,11 +31,13 @@ The same pagination engine powers inspection, preview, and final output. It supp
 
 Follow the current [Satzstrom Quickstart](https://satzstrom.com/quickstart.md) for installation, project setup, explicit data inputs, inspection, and rendering. The complete agent-readable documentation index is available at [satzstrom.com/docs/llms.txt](https://satzstrom.com/docs/llms.txt).
 
+Use `satzstrom doctor /absolute/path/document.tsx`, or the MCP `doctor` tool with that documentPath, to inspect the running version, resolved project and primitives version. Version differences are informational. If you update Satzstrom, restart the connected MCP server so it uses the new executable. Finish setup by checking a real document and inspecting its first page as an image.
+
 # Authoring Satzstrom Documents
 
 Build a Satzstrom document from its physical structure outward. Decide which pages are fixed, which content must flow, and which information belongs to the document model before refining individual components.
 
-The public primitives are `Document`, `Page`, `PageMaster`, `Flow`, `PageBreak`, `RepeatBox`, `defineSequence`, `Sequence`, `Contents`, `Ref`, `Footnote`, `Math`, and `useRenderReady`.
+The public primitives are `Document`, `Page`, `PageMaster`, `Flow`, `PageBreak`, `RepeatBox`, `defineSequence`, `Sequence`, `Contents`, `Ref`, `Footnote`, `Footnotes`, `Math`, and `useRenderReady`.
 
 ## The Document Module
 
@@ -127,7 +131,7 @@ Use CSS break rules when the content expresses a real relationship:
 
 Normal containers use sliced box decoration as they continue across pages. Use `RepeatBox` when every fragment should repeat the complete border, padding, and background while the content itself continues without duplication.
 
-Long table rows, list items, and footnotes can continue onto later pages. Oversized images and other atomic media are reduced proportionally when they exceed the content area. CSS columns, normal floats, top and bottom page floats, counters, and generated content remain available when the design needs them.
+Long table rows, list items, and footnotes can continue onto later pages. HTML/CSS controls media dimensions. Oversized media produce a diagnostic; use authored rules such as max-width: 100% and height: auto to fit them. CSS columns, top and bottom page floats, counters, and generated content are supported within the documented fragmentation limits. Normal float wrapping can differ after paragraph composition; a diagnostic identifies the limitation.
 
 Transformed or clipped containers, sticky positioning, dense grids, grid template areas, and grid rows spanning multiple tracks cannot always be fragmented safely. Satzstrom keeps these structures atomic and reports a layout diagnostic instead of silently producing the wrong result. Reshape the component when its content must flow across pages.
 
@@ -162,9 +166,41 @@ function Section({ id, title, children }: { id: string; title: string; children:
 
 `Contents` renders the collected numbers, titles, and page numbers. Its `asChild` form passes the entries to a custom contents component. `Ref` links to an HTML ID and can display its number, title, or page. Pass a sequence to `Document` through `bookmarks` when the same hierarchy should become the PDF outline.
 
+## Footnotes: complete document and migration
+
+Documents with footnotes now require one empty `Footnotes` region. In each PageMaster layout that uses footnotes, add it outside `Flow`. If the PageMaster has no layout yet, use the frame below. For a fixed `Page`, place `Footnotes` inside that Page; overflow is reported instead of generating more pages.
+
+Copy this complete example into `document.tsx` in a Satzstrom project. The full-height frame gives `maxHeight: "20%"` a definite reference. Footnotes grow up to that limit, and Flow gets the remaining space. Font, spacing and separators belong to your layout.
+
+```tsx
+import { Document, PageMaster, Flow, Footnote, Footnotes } from "@satzstrom/primitives";
+
+function PageLayout() {
+  return (
+    <div style={{ height: "100%", padding: "15mm", display: "flex", flexDirection: "column" }}>
+      <Flow style={{ flex: 1, minHeight: 0 }} />
+      <Footnotes style={{ maxHeight: "20%", flexShrink: 0, fontSize: "10pt" }} />
+    </div>
+  );
+}
+
+export default function Report() {
+  return (
+    <Document title="Report with footnotes" lang="en">
+      <PageMaster size="A4" layout={PageLayout}>
+        <h1>A report with footnotes</h1>
+        <p>
+          A statement with a source.<Footnote>Source: Annual report 2025.</Footnote>
+        </p>
+      </PageMaster>
+    </Document>
+  );
+}
+```
+
 ## Footnotes, Mathematics, and Async Content
 
-`Footnote` places a numbered call in the text and moves its content into the footnote region of the current page. Footnotes remain part of the logical reading order and may continue when they are longer than the available region.
+`Footnote` places a numbered call in the text. Add one empty `<Footnotes />` outside Flow in its PageMaster layout, or inside its fixed Page. Style and constrain the region with normal CSS; it inherits typography, has no automatic separator or height cap, and disappears when empty. With a definite parent height, `maxHeight: "20%"` limits its share of the page. Long notes continue within the same PageMaster; fixed Pages report overflow. Markdown notes share JSX numbering and placement, including repeated-reference links and backlinks. Use `$...$` for inline Markdown math, `$$...$$` for display math and `\$` for literal dollar signs.
 
 `Math` renders KaTeX input as inline or display mathematics with HTML and MathML. Set `display` for block equations and `label` when the equation needs a stable label.
 
@@ -202,3 +238,9 @@ Use `--pdfa 2a` for PDF/A-2a and `--pdfua 1` for PDF/UA-1. Both may be enabled t
 Set `bleed` and `cropMarks` on `Page` or `PageMaster` when the document will be trimmed after printing. Satzstrom writes the physical page, trim, and bleed geometry into the PDF.
 
 Satzstrom currently produces sRGB output. It does not provide CMYK separation, spot colors, or PDF/X. Keep those requirements outside the Satzstrom workflow until the engine supports them explicitly.
+
+Custom page orientation normalizes the longer dimension: landscape is horizontal, portrait vertical; omit orientation to preserve your exact width and height.
+
+Layout explanations are opt-in: `satzstrom inspect document.tsx --layout` or MCP `inspect({ documentPath, layout: true })`. Combine them with images or text, or request layout alone. Each selected page includes `layout` with millimetre bounds, computed margins, break rules, original source locations when available, and recorded rejected placements. The top-level `revision` identifies the input used. Fragment sources refer to the original element; inherited sources are labelled. An absent decision means no earlier rejection was recorded. Placement measurements describe the attempted earlier page, including footnotes, page floats and the bottom guard. Fixed Pages report geometry and overflow without generating pagination decisions.
+
+In the Preview, enable **Explain layout** and select an element. The panel shows these same records, offers **Copy source location**, and includes the debug colour legend. A reload clears the selection; old revision messages are ignored. Copying a location does not open or select an editor.

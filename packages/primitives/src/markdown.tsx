@@ -9,6 +9,7 @@ import ReactMarkdown, { type Components, type ExtraProps } from "react-markdown"
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import { Math } from "./content.js";
+import { markdownFootnotes } from "./markdown-footnotes.js";
 import { DocumentLabelsContext, DocumentLanguageContext } from "./document-context.js";
 
 export type MarkdownLabels = {
@@ -41,7 +42,8 @@ export function Markdown({ children, labels }: MarkdownProps) {
   return (
     <ReactMarkdown
       components={components}
-      remarkPlugins={[remarkGfm, [remarkMath, { singleDollarTextMath: false }]]}
+      remarkPlugins={[remarkGfm, [remarkMath, { singleDollarTextMath: true }]]}
+      rehypePlugins={[[markdownFootnotes, { label: labels?.footnotes ?? documentLabels.footnote }]]}
       remarkRehypeOptions={{
         clobberPrefix: footnotePrefix,
         footnoteLabel: labels?.footnotes ?? documentLabels.footnotes ?? defaultLabels.footnotes,

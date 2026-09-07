@@ -1,5 +1,5 @@
 import { cloneElement, isValidElement, type ReactNode } from "react";
-import { Flow, type FlowProps, type PageContext } from "@satzstrom/primitives";
+import { Flow, Footnotes, type FlowProps, type PageContext } from "@satzstrom/primitives";
 
 export type PageMargins = number | { top: number; right: number; bottom: number; left: number };
 
@@ -26,7 +26,7 @@ export function PageFrame({
   const content =
     isValidElement<FlowProps>(children) && children.type === Flow
       ? cloneElement(children, {
-          style: { width: "100%", height: "100%", ...children.props.style },
+          style: { width: "100%", flex: 1, minHeight: 0, ...children.props.style },
         })
       : children;
   return (
@@ -51,7 +51,10 @@ export function PageFrame({
       >
         {header}
       </header>
-      <main style={contentStyle}>{content}</main>
+      <main style={{ ...contentStyle, display: "flex", flexDirection: "column" }}>
+        {content}
+        <Footnotes style={{ flex: "none", maxHeight: "30%", fontSize: "8pt", marginTop: "3mm" }} />
+      </main>
       <footer
         className="rr-page-footer"
         aria-hidden="true"
