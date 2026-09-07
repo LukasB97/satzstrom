@@ -220,7 +220,7 @@ The public repository contains the complete sources for all seven gallery docume
 
 ## Public preview
 
-Satzstrom 0.1.2 is a public preview. Breaking changes may occur during the `0.x` series and are documented in the [changelog](./CHANGELOG.md) with migration notes.
+Satzstrom 0.1.3 is a public preview. Breaking changes may occur during the `0.x` series and are documented in the [changelog](./CHANGELOG.md) with migration notes.
 
 Supported platforms are:
 
@@ -274,6 +274,6 @@ Read [CONTRIBUTING.md](./CONTRIBUTING.md) before beginning substantial work.
 
 ## Support and security
 
-Satzstrom 0.1.2 has community support without an SLA. See [SUPPORT.md](./SUPPORT.md) when reporting a problem.
+Satzstrom 0.1.3 has community support without an SLA. See [SUPPORT.md](./SUPPORT.md) when reporting a problem.
 
 Please report vulnerabilities privately through GitHub Private Vulnerability Reporting. See [SECURITY.md](./SECURITY.md) for details.

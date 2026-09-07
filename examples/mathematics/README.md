@@ -4,27 +4,22 @@ The complete React source for the mathematics paper shown in the [Satzstrom gall
 
 ## Set up
 
-Requires Node.js 20 or newer on Windows x64 or Linux x64, Git and pnpm.
+Requires Node.js 20 or newer on Windows x64 or Linux x64.
 From a working directory of your choice:
 
 ```sh
 npm install -g satzstrom
-git clone https://github.com/LukasB97/satzstrom.git
-cd satzstrom
-pnpm install
-pnpm build
-cd examples/mathematics
+satzstrom init mathematics --example mathematics
+cd mathematics
 satzstrom dev document.tsx
 ```
 
-If you already cloned and installed the repository, open a terminal in
-`examples/mathematics` and run the last command.
+To add this example to an existing project, run `satzstrom add mathematics.tsx --example mathematics` there. The CLI prints the document and data paths to use.
 
 ## Edit and export
 
 Edit `document.tsx` and `styles.css` to change the content and layout. This example needs no data file.
-The live preview updates as you save. Keep it running in one terminal and use a
-second terminal in the same example directory to check and export:
+The live preview updates as you save. Use Check, Create PDF and Inspect in the preview, or run these commands in the example directory:
 
 ```sh
 satzstrom check document.tsx --strict

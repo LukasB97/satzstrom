@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.3 - 2026-09-07
+
+- Preserve SVG content in flowing layouts and report integrity problems.
+- Resolve project dependencies consistently and provide actionable installation errors.
+- Create or add editable gallery examples through the CLI and MCP.
+- Check layouts, create PDFs and inspect pages directly in the live preview.
+- Keep project CSS configuration within the document project.
+
 ## 0.1.2 - 2026-09-04
 
 - Improve preview navigation, reload reliability, diagnostics, and explicit document inputs.

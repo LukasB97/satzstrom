@@ -4,42 +4,33 @@ These seven projects are the complete sources behind the document gallery on [sa
 
 ## Run an example
 
-Requires Node.js 20 or newer on Windows x64 or Linux x64, Git and pnpm.
+Requires Node.js 20 or newer on Windows x64 or Linux x64.
 Each example has its own README with a complete setup and export workflow.
 For the invoice, start in a working directory of your choice:
 
 ```sh
 npm install -g satzstrom
-git clone https://github.com/LukasB97/satzstrom.git
-cd satzstrom
-pnpm install
-pnpm build
-cd examples/invoice
+satzstrom init invoice --example invoice
+cd invoice
 satzstrom dev document.tsx --data data.json
 ```
 
-Replace `invoice` with `specimen-book`, `deep-space-atlas`, `enterprise-board-pack`, `aurelis-material-notes`, or `mathematics`. The mathematics example accepts an empty object from its checked-in `data.json`.
+Other example names are `specimen-book`, `deep-space-atlas`, `enterprise-board-pack`, `aurelis-material-notes`, `mathematics` and `beyond-the-room`. The CLI prints the preview command, including an explicit data path when needed.
 
-The [Beyond the room](./beyond-the-room/README.md) architecture article uses no data file.
-From the repository root:
+To copy an example into an existing Satzstrom TypeScript project, run `satzstrom add invoice.tsx --example invoice`. Supporting files go into `invoice.assets`; existing files and compatible dependency declarations are preserved.
 
-```sh
-cd examples/beyond-the-room
-satzstrom dev document.tsx
-```
-
-Run `pnpm test:examples` from the repository root to type-check every public example together.
+Use Check, Create PDF and Inspect in the browser preview. Create PDF asks before replacing an existing file.
 
 ## Invoice walkthrough
 
 The invoice is the smallest complete data-driven example. Its files have distinct jobs:
 
-- `invoice/data.json` contains the invoice number, date, customer, and line items.
-- `invoice/document.tsx` defines the typed component props, totals, semantic table, and page structure.
-- `invoice/styles.css` owns the visual system and print layout.
+- `data.json` contains the invoice number, date, customer, and line items.
+- `document.tsx` defines the typed component props, totals, semantic table, and page structure.
+- `styles.css` owns the visual system and print layout.
 - `shared/page-frame.tsx` provides the reusable header, footer, and page margins.
 
-Start the live preview from `examples/invoice`:
+Start the live preview from the created `invoice` directory:
 
 ```sh
 satzstrom dev document.tsx --data data.json

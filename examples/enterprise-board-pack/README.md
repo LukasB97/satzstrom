@@ -4,27 +4,22 @@ The complete React source for the board report shown in the [Satzstrom gallery](
 
 ## Set up
 
-Requires Node.js 20 or newer on Windows x64 or Linux x64, Git and pnpm.
+Requires Node.js 20 or newer on Windows x64 or Linux x64.
 From a working directory of your choice:
 
 ```sh
 npm install -g satzstrom
-git clone https://github.com/LukasB97/satzstrom.git
-cd satzstrom
-pnpm install
-pnpm build
-cd examples/enterprise-board-pack
+satzstrom init enterprise-board-pack --example enterprise-board-pack
+cd enterprise-board-pack
 satzstrom dev document.tsx --data data.json
 ```
 
-If you already cloned and installed the repository, open a terminal in
-`examples/enterprise-board-pack` and run the last command.
+To add this example to an existing project, run `satzstrom add enterprise-board-pack.tsx --example enterprise-board-pack` there. The CLI prints the document and data paths to use.
 
 ## Edit and export
 
 Edit `data.json` to change the content, and the React and CSS files to change the layout. The JSON object is passed to the document component as props.
-The live preview updates as you save. Keep it running in one terminal and use a
-second terminal in the same example directory to check and export:
+The live preview updates as you save. Use Check, Create PDF and Inspect in the preview, or run these commands in the example directory:
 
 ```sh
 satzstrom check document.tsx --data data.json --strict

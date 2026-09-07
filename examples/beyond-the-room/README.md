@@ -3,29 +3,24 @@
 A two-page article about Frank Lloyd Wright, Fallingwater and the Guggenheim Museum.
 The complete React and CSS source of the PDF shown on satzstrom.com.
 
-## Run from the examples repository
+## Run the example
 
-Requires Node.js 20 or newer on Windows x64 or Linux x64, Git and pnpm.
+Requires Node.js 20 or newer on Windows x64 or Linux x64.
 
 From a working directory of your choice:
 
 ```sh
 npm install -g satzstrom
-git clone https://github.com/LukasB97/satzstrom.git
-cd satzstrom
-pnpm install
-pnpm build
-cd examples/beyond-the-room
+satzstrom init beyond-the-room --example beyond-the-room
+cd beyond-the-room
 satzstrom dev document.tsx
 ```
 
-If you already cloned and installed the repository, open a terminal in
-`examples/beyond-the-room` and run the last command. Keep the preview running
-and use a second terminal in that directory to check and export:
+Use Check, Create PDF and Inspect in the preview, or run these commands in the example directory:
 
 ```sh
 satzstrom check document.tsx --strict
-satzstrom render document.tsx --out article.pdf --strict --overwrite
+satzstrom render document.tsx --out article.pdf --strict
 ```
 
 Fix any reported layout issues and review the preview before exporting.

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "0.1.2",
+  "version": "0.1.3",
   "files": [
     {
       "path": ".gitattributes",
@@ -20,7 +20,7 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "ce42a0848b8c50092340eb1981e814b769d96e704f925a78f9b4fe21dea106ca"
+      "sha256": "127fa52ad11d5301b5114e2444921fe4be3fdaaeb49bf072b4d01553f281ce33"
     },
     {
       "path": "CODE_OF_CONDUCT.md",
@@ -40,7 +40,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "3e9c2e84630ee362c6bceca5c092b92e9f1dae91ea6980b25a518429cbffdd3f"
+      "sha256": "af0da9b94aba357dae05408aa7403932003cf765d587662c92685fb642315d04"
     },
     {
       "path": "SECURITY.md",
@@ -48,7 +48,7 @@
     },
     {
       "path": "SUPPORT.md",
-      "sha256": "9917a1db32e8b56ed23cd6105faa6c73c04d5a9a618dcd742d9abf3ee2aee1f6"
+      "sha256": "25faadc4f4a3f2611dd0aad465a1b9e0b0703dc5e53c7bc1479c4356851da8eb"
     },
     {
       "path": "docs/assets/readme/aurelis-material-notes.webp",
@@ -72,11 +72,11 @@
     },
     {
       "path": "examples/README.md",
-      "sha256": "78cf2116cb5c5c961bdef1b05e692814892a41910088486c01bfa86f6e9b147d"
+      "sha256": "4ebc0af0e207cfb3c218dbbf0a7a37b5af1cdadfdb1d0b901ff341685bcc8766"
     },
     {
       "path": "examples/aurelis-material-notes/README.md",
-      "sha256": "56e4b21c1c3ba9624af80b18e00a0a7b277a91b953476896ef7415526606d352"
+      "sha256": "21e89a9dc2921f41111de222a452f7dea3800a493b02f3d4be366bf9a3668f90"
     },
     {
       "path": "examples/aurelis-material-notes/data.json",
@@ -100,7 +100,7 @@
     },
     {
       "path": "examples/beyond-the-room/README.md",
-      "sha256": "c582fdddf2e684b0689e656ac4976a5c0bbef8a9407a919030b787f412cf9ecb"
+      "sha256": "16b2d1d3009d8c7962482ac27b2f58bc863717fd8e83f67576799742dacbdba2"
     },
     {
       "path": "examples/beyond-the-room/credits.txt",
@@ -115,8 +115,12 @@
       "sha256": "3506ebb6bc5311030100884f79a8ddf42d6f1dbd56441e0cde83adee7cc57758"
     },
     {
+      "path": "examples/catalog.json",
+      "sha256": "b80d6a030ae793295134d29709a6a33832032498cbe3ad49da96ed1c9fa275ad"
+    },
+    {
       "path": "examples/deep-space-atlas/README.md",
-      "sha256": "db041009ffd80109bbd22bd76dd8efa516487484adb4aa30dee60c3597c09073"
+      "sha256": "ec1040cb3118e36e242c7bc04ff36ff06d1c014502aa5ff374d56c7907302b26"
     },
     {
       "path": "examples/deep-space-atlas/data.json",
@@ -136,7 +140,7 @@
     },
     {
       "path": "examples/enterprise-board-pack/README.md",
-      "sha256": "e0e2851342d5a7fb9ea938dd124c1f01ac4afad8d71720f0486e884bf78ac76e"
+      "sha256": "428a746ccdb7024005fa0739105c5bc9703d7d2be9e70f25c2d51f1284412652"
     },
     {
       "path": "examples/enterprise-board-pack/closing-pages.tsx",
@@ -176,7 +180,7 @@
     },
     {
       "path": "examples/invoice/README.md",
-      "sha256": "6b5209d78facb6e05ece545842b7a77140163c852c45f57fbae155213e76bfe0"
+      "sha256": "4f601c192756ce4241383b0102d3d4b34b359e1321e76fe4858d8172f878a3fb"
     },
     {
       "path": "examples/invoice/data.json",
@@ -192,7 +196,7 @@
     },
     {
       "path": "examples/mathematics/README.md",
-      "sha256": "1c02b01d381238347d5b0ed5d109963e80db784dea5a5004a87aa94ead7d0a39"
+      "sha256": "ad7dfe8cb56389866b15a0ad08b1dd5b29f4ce79a32f832fc96d2b7007c7bc90"
     },
     {
       "path": "examples/mathematics/data.json",
@@ -216,7 +220,7 @@
     },
     {
       "path": "examples/specimen-book/README.md",
-      "sha256": "d2e5d8139e5e80a8c39f3513b7a87dce5849b03ef0516fa879e54f2ac667baf9"
+      "sha256": "cbe1e2c1a9414c9266448c10c189da7f2021f6ab9f3f02c329900b1d5f9f4466"
     },
     {
       "path": "examples/specimen-book/closing-pages.tsx",
@@ -260,7 +264,7 @@
     },
     {
       "path": "examples/starter/package.json",
-      "sha256": "c3b789389f326d7b0583c2757c01268b8d968dbac0c01e7625513a1c44fb5ca4"
+      "sha256": "9156ba882a950a8b8ea1c14ec4a2141f1b9e985a5baf34180e3cb8af85225f9f"
     },
     {
       "path": "examples/starter/styles.css",
@@ -272,7 +276,7 @@
     },
     {
       "path": "package.json",
-      "sha256": "69f9b592ad058e974ed417168dba364f1229e2f2dac916a2c46a9d794e774f05"
+      "sha256": "6179f434a93d397da3f60d1376627b49f92c49ead06e7901c2df3cbc6cb0ad5a"
     },
     {
       "path": "packages/primitives/LICENSE",
@@ -284,7 +288,7 @@
     },
     {
       "path": "packages/primitives/package.json",
-      "sha256": "9ebe0943412dd9d2be7a8472a9d7ef2148d6d6a9aec2569d357d09295c5bca65"
+      "sha256": "dbfa4aac3d0e01eaa137a9725da20186a2ce758bc5def620e9763faeb1baf8b8"
     },
     {
       "path": "packages/primitives/src/content.tsx",
@@ -348,7 +352,7 @@
     },
     {
       "path": "packages/satzstrom/package.json",
-      "sha256": "5217cdabfeb455541b473074795bb952da7d1459ef24865b774ba46aa1fbf2fe"
+      "sha256": "370eebbad9f49a195675ec5b1051b67d39ecc4b064b61ba07d57ed19dec12f77"
     },
     {
       "path": "pnpm-lock.yaml",
@@ -360,7 +364,7 @@
     },
     {
       "path": "skills/satzstrom/SKILL.md",
-      "sha256": "08fc6e58d5a4c3c1a12959e0cadbc088a9eaad359b9deaac51286ca6d483f866"
+      "sha256": "561da495dd517dd7e5cd9518b777a71b011eaffdae04a218141403aef6d8748b"
     }
   ]
 }

@@ -174,6 +174,10 @@ Call `useRenderReady` when content depends on asynchronous browser work. Pass `f
 
 Use the live preview while shaping the document. It shows the same paginated pages as the final renderer and exposes layout diagnostics without writing a PDF.
 
+The browser preview also offers Check, Create PDF and Inspect. Check runs a strict layout check of the current revision; document changes invalidate the status. Create PDF writes beside the document by default and asks before replacing output. Inspect shows the current page's text and offers its PNG. A successful layout check is not a substitute for visual review or independent PDF conformance validation.
+
+For an editable gallery starting point, use `satzstrom init my-document --example invoice`, or `satzstrom add invoice.tsx --example invoice` in an existing project. The existing MCP `init` and `add` tools accept the same optional `example`. Follow the returned `dataPath` or printed `--data` argument explicitly. Supporting files for `add` go into `invoice.assets`. Available examples are specimen-book, deep-space-atlas, enterprise-board-pack, invoice, aurelis-material-notes, mathematics and beyond-the-room. The default minimal starter remains available without `example`.
+
 After a structural or visual change, inspect the document state and render the pages affected by that change. Check the first and last page of a flowing region as well as pages around a deliberate break. Use debug rendering when a content boundary, split, keep rule, or overflow is unclear.
 
 With MCP, use `check` for issues and `inspect` for page images or text. Pass absolute document and data paths, especially when the client exposes multiple workspace roots. Without MCP, use:
